@@ -60,6 +60,8 @@ router.beforeEach((to, from, next) => {
       "&tag=bigscreen";
     location.href = url;
     return;
+  } else {
+    window.localStorage.setItem("token", JSON.stringify(token));
   }
   next();
 });

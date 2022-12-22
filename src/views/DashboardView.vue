@@ -1,18 +1,27 @@
 <template>
   <div class="layout">
-    <div class="header">头部标题等内容</div>
+    <div class="header" @click="home">头部标题等内容</div>
     <div class="content">
       <router-view />
     </div>
   </div>
 </template>
 <script>
-import { Options, Vue } from 'vue-class-component'
+/* eslint-disable */
+import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
-@Options({
-  components: {}
-})
-export default class HomeView extends Vue {}
+export default defineComponent({
+  name: "dashboard",
+  components: {},
+  setup() {
+    const router = useRouter();
+    const home = () => {
+      router.push({ path: "/dashboard/home" });
+    };
+    return { home };
+  },
+});
 </script>
 
 <style scoped></style>

@@ -1,14 +1,24 @@
 <template>
   <div class="home">
     <span>大屏清单</span>
+    <button @click="jump">A专项大屏跳转</button>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
+/* eslint-disable */
+import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
-@Options({
-  components: {}
-})
-export default class HomeView extends Vue {}
+export default defineComponent({
+  name: "dashboard",
+  components: {},
+  setup() {
+    const router = useRouter();
+    const jump = () => {
+      router.push({ path: "/dashboard/about" });
+    };
+    return { jump };
+  },
+});
 </script>
