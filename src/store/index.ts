@@ -1,14 +1,6 @@
-import { createStore } from 'vuex'
+/* eslint-disable */
+import { createPinia } from "pinia";
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+const store = createPinia();
+
+export { store };

@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Layout from "@/views/DashboardView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import AboutView from "@/views/about/AboutView.vue";
+import { useAppStore } from "@/store/modules/app";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,6 +15,10 @@ const routes: Array<RouteRecordRaw> = [
     path: "/dashboard",
     component: Layout,
     children: [
+      {
+        path: "",
+        redirect: "/dashboard/home",
+      },
       {
         path: "home",
         component: HomeView,
@@ -27,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/:path(.*)*",
     name: "Other",
-    redirect: "/dashboard",
+    redirect: "/dashboard/home",
     meta: {
       title: "Other",
     },
@@ -37,6 +42,26 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+/**
+ * 守卫路由
+ */
+router.beforeEach((to, from, next) => {
+  debugger;
+  const fullPath = to.fullPath || "";
+  const token = window.localStorage.getItem("token") || to.query.token;
+  if (!token || token === "undefined") {
+    localStorage.removeItem("token");
+    const url =
+      "http://localhost:3100/#/login" +
+      "?redirect_url=" +
+      "http://localhost:8080" +
+      "&tag=bigscreen";
+    location.href = url;
+    return;
+  }
+  next();
 });
 
 export default router;
