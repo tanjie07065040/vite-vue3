@@ -24,4 +24,17 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.layout {
+  width: 3840px;
+  height: 1080px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.header {
+  height: 10%;
+}
+.content {
+  height: 90%;
+}
+</style>
