@@ -8,7 +8,7 @@ import { useAppStore } from "@/store/modules/app";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "dashboard",
+    name: "bigscreen",
     redirect: "/dashboard",
   },
   {
@@ -48,15 +48,15 @@ const router = createRouter({
  * 守卫路由
  */
 router.beforeEach((to, from, next) => {
-  debugger;
   const fullPath = to.fullPath || "";
+  const appStore = useAppStore();
   const token = window.localStorage.getItem("token") || to.query.token;
   if (!token || token === "undefined") {
     localStorage.removeItem("token");
     const url =
-      "http://localhost:3100/#/login" +
+      appStore.getConfig.AUTHOR_URL +
       "?redirect_url=" +
-      "http://localhost:8080" +
+      appStore.getConfig.CALLBACK_URL +
       "&tag=bigscreen";
     location.href = url;
     return;
