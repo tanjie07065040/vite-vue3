@@ -61,7 +61,7 @@ router.beforeEach((to, from, next) => {
     location.href = url;
     return;
   } else {
-    window.localStorage.setItem("token", JSON.stringify({ token: token }));
+    window.localStorage.setItem("token", token.toString());
   }
   next();
 });

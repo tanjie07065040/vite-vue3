@@ -16,6 +16,7 @@
     "pinia": "^2.0.22",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",
+    "vue3-eventbus": "^2.0.0",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

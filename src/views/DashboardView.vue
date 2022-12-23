@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <div class="header" @click="home">头部标题等内容</div>
+    <div class="header" @click="home">{{ title }}</div>
     <div class="content">
       <router-view />
     </div>
@@ -8,31 +8,45 @@
 </template>
 <script>
 /* eslint-disable */
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import { useAppStore } from "../store/modules/app";
+import bus from "vue3-eventbus";
 
 export default defineComponent({
   name: "dashboard",
   components: {},
   setup() {
     const router = useRouter();
+    const appStore = useAppStore();
+    const title = ref("");
+
+    onMounted(() => {
+      title.value = appStore.getAppTitle;
+      bus.on("titilChage", (item) => {
+        title.value = item;
+      });
+    });
     const home = () => {
+      title.value = appStore.getConfig.TITLE;
+      appStore.setAppTitle(appStore.getConfig.TITLE);
       router.push({ path: "/dashboard/home" });
     };
-    return { home };
+    return { home, title };
   },
 });
 </script>
 
 <style scoped>
 .layout {
-  width: 3840px;
-  height: 1080px;
+  max-width: 1920px;
+  max-height: 1080px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 .header {
   height: 10%;
+  font-size: 40px;
 }
 .content {
   height: 90%;
