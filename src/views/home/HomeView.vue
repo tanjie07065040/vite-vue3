@@ -50,21 +50,21 @@ export default defineComponent({
     onMounted(() => {
       appLink.value = [
         {
-          url: "",
+          url: "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTI3NjE2OX0=?timeStamp=1854c7bb91d",
           name: "交通专项大屏",
           desc: "交通专项大屏交通专项大屏交通专项大屏交通专项大屏交通专项大屏交通专项大屏交通专项大屏",
           icon: "",
           title: "交通大屏",
         },
         {
-          url: "",
+          url: "http://localhost:8093",
           name: "test2",
           desc: "交通专项大屏交通专项大屏交通专项大屏交通专项大屏交通专项大屏交通专项大屏交通专项大屏",
           icon: "",
           title: "防汛大屏",
         },
         {
-          url: "",
+          url: "https://workspace.easyv.cloud/bigscreen/1276169",
           name: "test3",
           desc: "test3",
           icon: "",
@@ -102,7 +102,7 @@ export default defineComponent({
     });
 
     const jump = (item: any) => {
-      router.push({ path: "/dashboard/about" });
+      router.push({ path: "/dashboard/about", query: { url: item.url } });
       bus.emit("titilChage", item.title);
     };
     return { jump, appLink };
