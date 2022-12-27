@@ -50,7 +50,7 @@ const router = createRouter({
  * 守卫路由
  */
 router.beforeEach((to, from, next) => {
-  const fullPath = to.fullPath || "";
+  const path = to.path || "";
   const appStore = useAppStore();
   const token = window.localStorage.getItem("token") || to.query.token;
   if (!token || token === "undefined") {
@@ -63,6 +63,13 @@ router.beforeEach((to, from, next) => {
     location.href = url;
     return;
   } else {
+    const title = appStore.getAppTitle || appStore.getConfig.TITLE;
+    if (
+      path === "/dashboard/about" &&
+      title === "合肥市城市安全风险综合监测预警大屏平台"
+    ) {
+      router.push({ path: "/dashboard/home" });
+    }
     window.localStorage.setItem("token", token.toString());
   }
   next();

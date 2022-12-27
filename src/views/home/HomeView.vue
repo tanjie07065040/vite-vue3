@@ -44,7 +44,7 @@ export default defineComponent({
   components: {},
   setup() {
     const router = useRouter();
-
+    const appStore = useAppStore();
     const appLink = ref<AppLinkInfo[]>([]);
 
     onMounted(() => {
@@ -102,8 +102,9 @@ export default defineComponent({
     });
 
     const jump = (item: any) => {
-      router.push({ path: "/dashboard/about", query: { url: item.url } });
+      appStore.setAppTitle(item.title);
       bus.emit("titilChage", item.title);
+      router.push({ path: "/dashboard/about", query: { url: item.url } });
     };
     return { jump, appLink };
   },

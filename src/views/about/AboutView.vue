@@ -1,15 +1,13 @@
 <template>
-  <div class="about">
-    <iframe
-      :src="frameSrc"
-      id="frames"
-      frameborder="0"
-      sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
-      width="100%"
-      height="900px"
-      @load="hideLoading"
-    ></iframe>
-  </div>
+  <iframe
+    :src="frameSrc"
+    id="frames"
+    frameborder="0"
+    sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
+    width="100%"
+    height="870px"
+    @load="hideLoading"
+  ></iframe>
 </template>
 <script lang="ts">
 /* eslint-disable */

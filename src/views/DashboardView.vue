@@ -39,7 +39,7 @@ export default defineComponent({
 
 <style scoped>
 .layout {
-  max-width: 1920px;
+  max-width: 3840px;
   max-height: 1080px;
   overflow-x: hidden;
   overflow-y: hidden;
