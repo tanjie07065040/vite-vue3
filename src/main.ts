@@ -29,6 +29,7 @@ async function bootstrap() {
   init();
   const appStore = useAppStore();
   appStore.setConfig(config.data);
+  appStore.setAppTitle(config.data.TITLE);
  
 }
 bootstrap();
