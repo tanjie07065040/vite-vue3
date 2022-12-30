@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force --host",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
@@ -15,10 +15,12 @@
     "core-js": "^3.8.3",
     "del": "^3.0.0",
     "dockerode": "^2.5.7",
+    "eslint-plugin-prettier": "^4.2.1",
     "pinia": "^2.0.22",
     "prettier": "^2.8.1",
     "unocss": "^0.48.0",
     "unplugin-auto-import": "^0.12.1",
+    "vite-plugin-eslint": "^1.8.1",
     "vue": "^3.2.45",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.1.6",
