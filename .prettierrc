@@ -7,8 +7,10 @@
   "jsxBracketSameLine": true,
   "useEditorConfig": true,
   "useTabs": false,
+  "parser": "flow",
   "vueIndentScriptAndStyle": true,
   "arrowParens": "avoid",
+  "endOfLine": "auto", 
   "htmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
