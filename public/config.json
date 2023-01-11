@@ -1,5 +1,58 @@
 {
   "TITLE": "合肥市城市安全风险综合监测预警大屏平台",
-  "AUTHOR_URL": "http://localhost:3100/#/login",
-  "CALLBACK_URL": "http://localhost:8080"
+  "AUTHOR_URL": "http://localhost:3101/#/login",
+  "CALLBACK_URL": "http://localhost:8080",
+  "BASECLOUD_URL": "https://cdp.gsafety.com:61001/gev/api",
+  "DISTRICT": "合肥市",
+  "APPLINK": [
+    {
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTI3NjE2OX0=?timeStamp=1854c7bb91d",
+      "name": "交通专项大屏",
+      "desc": "交通专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "交通大屏"
+    },
+    {
+      "url": "http://localhost:8093",
+      "name": "防汛专项大屏",
+      "desc": "交通专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "防汛大屏"
+    },
+    {
+      "url": "https://workspace.easyv.cloud/bigscreen/1276169",
+      "name": "危化专项大屏",
+      "desc": "危化专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "危化大屏"
+    },
+    {
+      "url": "",
+      "name": "尾矿库专项大屏",
+      "desc": "尾矿库专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "尾矿库大屏"
+    },
+    {
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTUzMDEyNn0=?timeStamp=1854d61a8e3",
+      "name": "地灾专项大屏",
+      "desc": "地灾专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "地灾大屏"
+    },
+    {
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTMzMzYwNH0=",
+      "name": "森火专项大屏",
+      "desc": "森火专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "森火大屏"
+    },
+    {
+      "url": "",
+      "name": "test4",
+      "desc": "工贸企业专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
+      "icon": "",
+      "title": "工贸企业大屏"
+    }
+  ]
 }

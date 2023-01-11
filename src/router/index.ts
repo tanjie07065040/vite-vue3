@@ -2,8 +2,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Layout from "@/views/DashboardView.vue";
 import HomeView from "@/views/home/HomeView.vue";
-import AboutView from "@/views/about/AboutView.vue";
 import { useAppStore } from "@/store/modules/app";
+import Cookie from 'js-cookie';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,11 +23,6 @@ const routes: Array<RouteRecordRaw> = [
         path: "home",
         name: "home",
         component: HomeView,
-      },
-      {
-        path: "about",
-        name: "about",
-        component: AboutView,
       },
     ],
   },
@@ -53,6 +48,9 @@ router.beforeEach((to, from, next) => {
   const path = to.path || "";
   const appStore = useAppStore();
   const token = window.localStorage.getItem("token") || to.query.token;
+  if(token){
+    appStore.setToken(token);
+  }
   if (!token || token === "undefined") {
     localStorage.removeItem("token");
     const url =
