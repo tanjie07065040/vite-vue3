@@ -22,7 +22,8 @@ export default defineComponent({
       const info: any = ref([]);
       info.value = appStore.getAppLink;
       if (info && info.value.length > 0) {
-        frameSrc.value = info.value[0].url;
+        // 这里的#后面的内容就是大屏的API需要添加认证
+        frameSrc.value = info.value[0].url + '#token=Bearer ' + appStore.getToken;
       }
     });
 
