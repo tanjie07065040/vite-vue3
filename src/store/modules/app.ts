@@ -5,7 +5,6 @@ import { store } from "@/store";
 
 interface AppState {
   config: any;
-  appTitle: string;
   applink: any;
   appDistrict: string;
   appBasicUrl: string;
@@ -16,8 +15,6 @@ export const useAppStore = defineStore({
   state: (): AppState => ({
     // 全局配置
     config: {},
-    // 标题
-    appTitle: "",
     // 应用连接集合信息
     applink: [],
     // 当前城市行政区划
@@ -32,12 +29,6 @@ export const useAppStore = defineStore({
      */
     getConfig(): any {
       return this.config;
-    },
-    /**
-     * 获取标题
-     */
-    getAppTitle(): string {
-      return this.appTitle;
     },
     /**
         * 获取连接集合信息
@@ -67,12 +58,6 @@ export const useAppStore = defineStore({
      */
     setConfig(config: any): void {
       return (this.config = config);
-    },
-    /**
-     * 设置标题
-     */
-    setAppTitle(appTitle: string): string {
-      return (this.appTitle = appTitle);
     },
     /**
     * 设置系统连接信息

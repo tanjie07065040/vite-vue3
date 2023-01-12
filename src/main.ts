@@ -29,7 +29,6 @@ async function bootstrap() {
   init();
   const appStore = useAppStore();
   appStore.setConfig(config.data);
-  appStore.setAppTitle(config.data.TITLE);
   appStore.setAppLink(config.data.APPLINK);
   appStore.setAppDistrict(config.data.DISTRICT);
   appStore.setAppBasicUrl(config.data.BASECLOUD_URL);

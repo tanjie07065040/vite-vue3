@@ -60,16 +60,7 @@ router.beforeEach((to, from, next) => {
       "&tag=bigscreen";
     location.href = url;
     return;
-  } else {
-    const title = appStore.getAppTitle || appStore.getConfig.TITLE;
-    if (
-      path === "/dashboard/about" &&
-      title === "合肥市城市安全风险综合监测预警大屏平台"
-    ) {
-      router.push({ path: "/dashboard/home" });
-    }
-    window.localStorage.setItem("token", token.toString());
-  }
+  } 
   next();
 });
 

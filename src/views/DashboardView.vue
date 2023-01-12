@@ -52,10 +52,12 @@ export default defineComponent({
 
     // 初始化
     onMounted(() => {
-      currentTitle.value = appStore.getAppTitle;
       start();
       currentWeather.value = '晴 18-20°C';
       currentAppLink.value = appStore.getAppLink;
+      if (currentAppLink.value && currentAppLink.value.length > 0) {
+        currentTitle.value = currentAppLink.value[0].title;
+      }
       currentDistrict.value = appStore.getAppDistrict;
       initUserInfo();
     });
@@ -89,15 +91,15 @@ export default defineComponent({
     }
 
     // 退出
-     function logout(){
+    function logout() {
       appStore.setToken(undefined);
       window.localStorage.removeItem('token');
       const url =
-      appStore.getConfig.AUTHOR_URL +
-      "?redirect_url=" +
-      appStore.getConfig.CALLBACK_URL +
-      "&tag=bigscreen";
-    location.href = url;
+        appStore.getConfig.AUTHOR_URL +
+        "?redirect_url=" +
+        appStore.getConfig.CALLBACK_URL +
+        "&tag=bigscreen";
+      location.href = url;
     }
 
     onUnmounted(() => {
