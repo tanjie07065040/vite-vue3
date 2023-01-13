@@ -13,7 +13,7 @@
       "title": "合肥市城市安全风险综合监测预警交通大屏"
     },
     {
-      "url": "http://localhost:8093",
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTMxMDM5NX0",
       "name": "防汛专项",
       "key": "flood",
       "desc": "交通专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
@@ -21,7 +21,7 @@
       "title": "合肥市城市安全风险综合监测预警防汛大屏"
     },
     {
-      "url": "https://workspace.easyv.cloud/bigscreen/1276169",
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTM0OTM0Mn0=",
       "name": "危化专项",
       "key": "chemical",
       "desc": "危化专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
@@ -29,7 +29,7 @@
       "title": "合肥市城市安全风险综合监测预警危化大屏"
     },
     {
-      "url": "",
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTYwMzM0Nn0=",
       "name": "尾矿库专项",
       "key": "tailingspond",
       "desc": "尾矿库专项大屏采用EasyV技术快速搭建大屏以及通过认证验证保证访问请求安全性",
