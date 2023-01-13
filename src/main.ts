@@ -25,7 +25,7 @@ function init() {
 
 async function bootstrap() {
   // 配置文件
-  const config = await axios.get(process.env.VUE_APP_PATH + "config.json");
+  const config = await axios.get(process.env.VUE_APP_PATH + "/config.json");
   init();
   const appStore = useAppStore();
   appStore.setConfig(config.data);

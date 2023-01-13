@@ -5,9 +5,9 @@ VOLUME /tmp
 
 RUN rm -rf /usr/share/nginx/html/*
 
-ADD . /usr/share/nginx/html
+ADD . /usr/share/nginx/html/mew/screen
 
-RUN chmod -R 777 /usr/share/nginx/html//mew/screen
+RUN chmod -R 777 /usr/share/nginx/html/mew/screen
 
 EXPOSE 80
 

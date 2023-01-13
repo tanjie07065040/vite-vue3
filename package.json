@@ -1,6 +1,6 @@
 {
   "name": "mew-screen-web",
-  "version": "0.1.3-202301rc2",
+  "version": "0.1.5-202301rc2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
