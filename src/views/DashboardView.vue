@@ -8,7 +8,6 @@
         'background-size': '100% 124px',
       }"
     >
-      <video src="../assets/header.webm" autoplay loop muted></video>
       <div class="left">
         <div class="time">{{ currentTime }}</div>
         <div class="line"></div>
@@ -39,6 +38,7 @@
           <div><img src="../assets/setting.png" /></div>
         </div>
       </div>
+      <video src="../assets/header.webm" autoplay loop muted></video>
     </div>
     <div class="content">
       <router-view :data="systemUrl" />
@@ -216,6 +216,7 @@ export default defineComponent({
 
     // 系统切换显示
     function showModal() {
+      console.log(111);
       visible.value = true;
     }
 
@@ -314,6 +315,7 @@ export default defineComponent({
   video {
     position: fixed;
     mix-blend-mode: screen;
+    pointer-events: none;
   }
   .left {
     width: 20%;
