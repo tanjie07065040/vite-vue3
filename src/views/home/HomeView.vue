@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
+  <div class="home" style="height: 100%; width: 100%">
     <iframe
       :src="frameSrc"
       id="frames"
       frameborder="0"
       sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
       width="100%"
-      height="870px"
+      height="100%"
       @load="hideLoading"
     ></iframe>
   </div>

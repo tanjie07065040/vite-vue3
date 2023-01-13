@@ -5,12 +5,19 @@
       :style="{
         background: 'url(' + headerBg + ')',
         'background-repeat': 'no-repeat',
-        'background-size': '100%',
+        'background-size': '100% 124px',
       }"
     >
-      <div class="time">{{ currentTime }}</div>
-      <div class="date">{{ currentDate }}</div>
-      <div class="weather">{{ currentWeather }}</div>
+      <video src="../assets/header.webm" autoplay loop muted></video>
+      <div class="left">
+        <div class="time">{{ currentTime }}</div>
+        <div class="line"></div>
+        <div class="date">{{ currentDate }}</div>
+        <div class="line"></div>
+        <div class="week">{{ currentWeek }}</div>
+        <div class="line"></div>
+        <div class="weather">{{ currentWeather }}</div>
+      </div>
       <div
         class="title"
         :style="{
@@ -19,13 +26,18 @@
           'background-position': 'center',
         }"
       ></div>
-      <div class="district">{{ currentDistrict }}</div>
-      <div class="applink" @click="showModal">
-        <div><img src="../assets/list.png" /></div>
-      </div>
-      <div class="userinfo">{{ currentLoginInfo.name }}</div>
-      <div class="exit" @click="logout">
-        <div><img src="../assets/setting.png" /></div>
+      <div class="right">
+        <div class="district">{{ currentDistrict }}</div>
+        <div class="line"></div>
+        <div class="applink" @click="showModal">
+          <div><img src="../assets/list.png" /></div>
+        </div>
+        <div class="line"></div>
+        <div class="userinfo">{{ currentLoginInfo.name }}</div>
+        <div class="line"></div>
+        <div class="exit" @click="logout">
+          <div><img src="../assets/setting.png" /></div>
+        </div>
       </div>
     </div>
     <div class="content">
@@ -63,9 +75,10 @@ import { defineComponent, onMounted, ref, reactive, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAppStore } from "../store/modules/app";
 import bus from "vue3-eventbus";
-import { dateUtil } from "../utils/dateUtil";
+import { dateUtil, getWeek } from "../utils/dateUtil";
 import authServer from "../api/auth";
 import { SysEnum } from "../enums/sysEnum";
+import dayjs from "dayjs";
 
 export default defineComponent({
   name: "dashboard",
@@ -76,6 +89,7 @@ export default defineComponent({
     const currentTitle = ref("");
     const currentTime = ref("");
     const currentDate = ref("");
+    const currentWeek = ref("");
     const currentWeather = ref("");
     const currentDistrict = ref("");
     const currentLoginInfo = ref("");
@@ -95,6 +109,7 @@ export default defineComponent({
       hour: "",
       minute: "",
       second: 0,
+      week: "",
     });
 
     const SystemImgList = [
@@ -171,6 +186,8 @@ export default defineComponent({
         now.get("y") + "-" + now.get("M") + 1 + "-" + now.get("D");
       currentTime.value =
         now.format("HH") + ":" + now.format("mm") + ":" + now.get("s");
+      console.log(dayjs().day());
+      currentWeek.value = getWeek();
     };
 
     // 开启日期时间计时器
@@ -209,6 +226,7 @@ export default defineComponent({
       changeBg(item.key);
     }
 
+    // 头部背景切换
     function changeBg(system) {
       switch (system) {
         case SysEnum.FOREST:
@@ -227,6 +245,25 @@ export default defineComponent({
       }
     }
 
+    // 头部标题切换
+    function changeBg(system) {
+      switch (system) {
+        case SysEnum.FOREST:
+          titleBg.value = require("../assets/title.png");
+          break;
+        case SysEnum.GEODISASTER:
+          titleBg.value = require("../assets/title.png");
+          break;
+        case SysEnum.TRAFFIC:
+        case SysEnum.FLOOD:
+        case SysEnum.CHEMICAL:
+        case SysEnum.INDUSTRIAL:
+        case SysEnum.TAILINGSPOND:
+          titleBg.value = require("../assets/title.png");
+          break;
+      }
+    }
+
     onUnmounted(() => {
       stop();
     });
@@ -235,6 +272,7 @@ export default defineComponent({
       currentTitle,
       currentDate,
       currentTime,
+      currentWeek,
       currentWeather,
       currentDistrict,
       currentLoginInfo,
@@ -258,60 +296,80 @@ export default defineComponent({
   max-height: 1080px;
   overflow-x: hidden;
   overflow-y: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .header {
-  height: 9vh;
+  height: 8vh;
   width: 100%;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  .time {
-    width: 5%;
-    position: relative;
-    font-size: 20px;
+  position: absolute;
+  color: #ffffff;
+  font-size: 20px;
+  video {
+    position: fixed;
+    mix-blend-mode: screen;
   }
-  .date {
-    width: 5%;
-    position: relative;
-    font-size: 20px;
-  }
+  .left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .line {
+      width: 5px;
+      height: 25%;
+      background-color: #4ac2fa;
+      margin: 0 20px 5px 20px;
+    }
+    .time {
+      margin-left: 1vw;
+    }
+    .date {
+    }
 
-  .weather {
-    width: 10%;
-    position: relative;
-    font-size: 20px;
+    .weather {
+    }
   }
 
   .title {
     width: 60%;
     height: 100%;
   }
+  .right {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .line {
+      width: 5px;
+      height: 25%;
+      background-color: #4ac2fa;
+      margin: 0 20px 5px 20px;
+    }
+    .district {
+      margin-left: 9vw;
+    }
 
-  .district {
-    font-size: 20px;
-    width: 5%;
-    position: relative;
-  }
+    .applink {
+      margin-bottom: 6px;
+    }
 
-  .applink {
-    width: 5%;
-  }
+    .userinfo {
+    }
 
-  .userinfo {
-    width: 5%;
-    position: relative;
-    font-size: 20px;
-  }
-
-  .exit {
-    width: 5%;
+    .exit {
+      margin-bottom: 6px;
+    }
   }
 }
 
 .content {
-  height: 91vh;
+  height: 1080px;
   width: 100%;
 }
 
@@ -340,7 +398,7 @@ export default defineComponent({
 :deep(.ant-modal) {
   position: relative;
   top: 85px !important;
-  left: 780px !important;
+  left: 45vw !important;
   padding-bottom: 0;
 }
 
