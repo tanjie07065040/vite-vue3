@@ -1,13 +1,10 @@
 <template>
   <div class="layout">
-    <div
-      class="header"
-      :style="{
-        background: 'url(' + headerBg + ')',
-        'background-repeat': 'no-repeat',
-        'background-size': '100% 124px',
-      }"
-    >
+    <div class="header" :style="{
+      background: 'url(' + headerBg + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': '100% 124px',
+    }">
       <div class="left">
         <div class="time">{{ currentTime }}</div>
         <div class="line"></div>
@@ -17,14 +14,11 @@
         <div class="line"></div>
         <div class="weather">{{ currentWeather }}</div>
       </div>
-      <div
-        class="title"
-        :style="{
-          background: 'url(' + titleBg + ')',
-          'background-repeat': 'no-repeat',
-          'background-position': 'center',
-        }"
-      ></div>
+      <div class="title" :style="{
+        background: 'url(' + titleBg + ')',
+        'background-repeat': 'no-repeat',
+        'background-position': 'center',
+      }"></div>
       <div class="right">
         <div class="district">{{ currentDistrict }}</div>
         <div class="line"></div>
@@ -45,22 +39,10 @@
     </div>
     <!-- 系统切换 -->
     <div id="bbox" ref="bbox">
-      <a-modal
-        class="change-system"
-        v-model:visible="visible"
-        title="系统切换"
-        footer=""
-        width="350px"
-        :getContainer="() => $refs.bbox"
-        destroyOnClose
-      >
+      <a-modal class="change-system" v-model:visible="visible" title="系统切换" footer="" width="350px"
+        :getContainer="() => $refs.bbox" destroyOnClose>
         <div class="system-box">
-          <div
-            class="system-item-box"
-            v-for="(item, index) of appLinkInfo"
-            :key="index"
-            @click="jump(item)"
-          >
+          <div class="system-item-box" v-for="(item, index) of appLinkInfo" :key="index" @click="jump(item)">
             <div class="system-img"><img :src="item.img" alt="" /></div>
             <div class="system-name">{{ item.name }}</div>
           </div>
@@ -312,47 +294,56 @@ export default defineComponent({
   position: absolute;
   color: #ffffff;
   font-size: 20px;
+
   video {
     position: fixed;
     mix-blend-mode: screen;
     pointer-events: none;
+    left: 0;
+    right: 0;
+    top: 0;
   }
+
   .left {
     width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
+
     .line {
       width: 5px;
       height: 25%;
       background-color: #4ac2fa;
       margin: 0 20px 5px 20px;
     }
+
     .time {
       margin-left: 1vw;
     }
-    .date {
-    }
 
-    .weather {
-    }
+    .date {}
+
+    .weather {}
   }
 
   .title {
     width: 60%;
     height: 100%;
   }
+
   .right {
     width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
+
     .line {
       width: 5px;
       height: 25%;
       background-color: #4ac2fa;
       margin: 0 20px 5px 20px;
     }
+
     .district {
       margin-left: 9vw;
     }
@@ -361,8 +352,7 @@ export default defineComponent({
       margin-bottom: 6px;
     }
 
-    .userinfo {
-    }
+    .userinfo {}
 
     .exit {
       margin-bottom: 6px;
@@ -378,19 +368,23 @@ export default defineComponent({
 .system-box {
   display: flex;
   flex-flow: wrap;
+
   .system-item-box {
     display: flex;
     width: 40%;
     line-height: 50px;
     margin-left: 12px;
+
     .system-img {
       margin: 16px 10px 0px 0px;
       width: 18px;
       height: 18px;
+
       :deep(img) {
         vertical-align: top;
       }
     }
+
     .system-name {
       color: #666666;
     }
