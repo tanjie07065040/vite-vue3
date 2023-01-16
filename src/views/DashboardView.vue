@@ -1,13 +1,10 @@
 <template>
   <div class="layout">
-    <div
-      class="header"
-      :style="{
-        background: 'url(' + headerBg + ')',
-        'background-repeat': 'no-repeat',
-        'background-size': '100% 124px',
-      }"
-    >
+    <div class="header" :style="{
+      background: 'url(' + headerBg + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': '100% 124px',
+    }">
       <div class="left">
         <div class="time">{{ currentTime }}</div>
         <div class="line"></div>
@@ -17,14 +14,11 @@
         <div class="line"></div>
         <div class="weather">{{ currentWeather }}</div>
       </div>
-      <div
-        class="title"
-        :style="{
-          background: 'url(' + titleBg + ')',
-          'background-repeat': 'no-repeat',
-          'background-position': 'center',
-        }"
-      ></div>
+      <div class="title" :style="{
+        background: 'url(' + titleBg + ')',
+        'background-repeat': 'no-repeat',
+        'background-position': 'center',
+      }"></div>
       <div class="right">
         <div class="district">{{ currentDistrict }}</div>
         <div class="line"></div>
@@ -40,138 +34,88 @@
       <video src="../assets/header.webm" autoplay loop muted></video>
     </div>
     <div class="content">
-      <router-view :data="systemUrl" />
+      <router-view />
     </div>
     <!-- 系统切换 -->
     <div id="bbox" ref="bbox">
-      <a-modal
-        class="change-system"
-        v-model:visible="visible"
-        title="系统切换"
-        footer=""
-        :getContainer="() => $refs.bbox"
-        destroyOnClose
-      >
+      <a-modal class="change-system" v-model:visible="visible" title="系统切换" footer="" :getContainer="() => $refs.bbox"
+        destroyOnClose>
         <div class="system-box">
-          <div
-            class="tool geodisaster"
-            :class="[
-              {
-                'geodisaster-active': selectData === 'geodisaster',
-              },
-            ]"
-            @click="selectFunc('geodisaster')"
-          >
+          <div class="tool geodisaster" :class="[
+            {
+              'geodisaster-active': selectData === 'geodisaster',
+            },
+          ]" @click="selectFunc('geodisaster')">
             <div class="title-box">地灾专项</div>
           </div>
-          <div
-            class="tool elevator"
-            :class="[
-              {
-                'elevator-active': selectData === 'elevator',
-              },
-            ]"
-            @click="selectFunc('elevator')"
-          >
+          <div class="tool elevator" :class="[
+            {
+              'elevator-active': selectData === 'elevator',
+            },
+          ]" @click="selectFunc('elevator')">
             <div class="title-box">电梯专项</div>
           </div>
-          <div
-            class="tool industrial"
-            :class="[
-              {
-                'industrial-active': selectData === 'industrial',
-              },
-            ]"
-            @click="selectFunc('industrial')"
-          >
+          <div class="tool industrial" :class="[
+            {
+              'industrial-active': selectData === 'industrial',
+            },
+          ]" @click="selectFunc('industrial')">
             <div class="title-box">工贸专项</div>
           </div>
-          <div
-            class="tool flood"
-            :class="[
-              {
-                'flood-active': selectData === 'flood',
-              },
-            ]"
-            @click="selectFunc('flood')"
-          >
+          <div class="tool flood" :class="[
+            {
+              'flood-active': selectData === 'flood',
+            },
+          ]" @click="selectFunc('flood')">
             <div class="title-box">防汛专项</div>
           </div>
-          <div
-            class="tool traffic"
-            :class="[
-              {
-                'traffic-active': selectData === 'traffic',
-              },
-            ]"
-            @click="selectFunc('traffic')"
-          >
+          <div class="tool traffic" :class="[
+            {
+              'traffic-active': selectData === 'traffic',
+            },
+          ]" @click="selectFunc('traffic')">
             <div class="title-box">交通专项</div>
           </div>
-          <div
-            class="tool populationdensity"
-            :class="[
-              {
-                'populationdensity-active': selectData === 'populationdensity',
-              },
-            ]"
-            @click="selectFunc('populationdensity')"
-          >
+          <div class="tool populationdensity" :class="[
+            {
+              'populationdensity-active': selectData === 'populationdensity',
+            },
+          ]" @click="selectFunc('populationdensity')">
             <div class="title-box">人密专项</div>
           </div>
-          <div
-            class="tool forest"
-            :class="[
-              {
-                'forest-active': selectData === 'forest',
-              },
-            ]"
-            @click="selectFunc('forest')"
-          >
+          <div class="tool forest" :class="[
+            {
+              'forest-active': selectData === 'forest',
+            },
+          ]" @click="selectFunc('forest')">
             <div class="title-box">森火专项</div>
           </div>
-          <div
-            class="tool chemical"
-            :class="[
-              {
-                'chemical-active': selectData === 'chemical',
-              },
-            ]"
-            @click="selectFunc('chemical')"
-          >
+          <div class="tool chemical" :class="[
+            {
+              'chemical-active': selectData === 'chemical',
+            },
+          ]" @click="selectFunc('chemical')">
             <div class="title-box">危化专项</div>
           </div>
-          <div
-            class="tool tailingspond"
-            :class="[
-              {
-                'tailingspond-active': selectData === 'tailingspond',
-              },
-            ]"
-            @click="selectFunc('tailingspond')"
-          >
+          <div class="tool tailingspond" :class="[
+            {
+              'tailingspond-active': selectData === 'tailingspond',
+            },
+          ]" @click="selectFunc('tailingspond')">
             <div class="title-box">尾矿专项</div>
           </div>
-          <div
-            class="tool firecontrol"
-            :class="[
-              {
-                'firecontrol-active': selectData === 'firecontrol',
-              },
-            ]"
-            @click="selectFunc('firecontrol')"
-          >
+          <div class="tool firecontrol" :class="[
+            {
+              'firecontrol-active': selectData === 'firecontrol',
+            },
+          ]" @click="selectFunc('firecontrol')">
             <div class="title-box">消防专项</div>
           </div>
-          <div
-            class="tool composite"
-            :class="[
-              {
-                'composite-active': selectData === 'composite',
-              },
-            ]"
-            @click="selectFunc('composite')"
-          >
+          <div class="tool composite" :class="[
+            {
+              'composite-active': selectData === 'composite',
+            },
+          ]" @click="selectFunc('composite')">
             <div class="title-box">综合专项</div>
           </div>
         </div>
@@ -411,6 +355,7 @@ export default defineComponent({
   position: absolute;
   color: #ffffff;
   font-size: 20px;
+
   video {
     position: fixed;
     mix-blend-mode: screen;
@@ -419,25 +364,27 @@ export default defineComponent({
     right: 0;
     top: 0;
   }
+
   .left {
     width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
+
     .line {
       width: 5px;
       height: 25%;
       background-color: #4ac2fa;
       margin: 0 20px 5px 20px;
     }
+
     .time {
       margin-left: 1vw;
     }
-    .date {
-    }
 
-    .weather {
-    }
+    .date {}
+
+    .weather {}
   }
 
   .title {
@@ -445,17 +392,20 @@ export default defineComponent({
     width: 60%;
     height: 100%;
   }
+
   .right {
     width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
+
     .line {
       width: 5px;
       height: 25%;
       background-color: #4ac2fa;
       margin: 0 20px 5px 20px;
     }
+
     .district {
       margin-left: 10vw;
     }
@@ -464,8 +414,7 @@ export default defineComponent({
       margin-bottom: 6px;
     }
 
-    .userinfo {
-    }
+    .userinfo {}
 
     .exit {
       margin-left: 20px;
@@ -484,11 +433,13 @@ export default defineComponent({
   height: 100%;
   display: flex;
   flex-flow: wrap;
+
   .tool {
     width: 298px;
     height: 138px;
     margin: 18px 10px 0px 5px;
     position: relative;
+
     .title-box {
       width: 100%;
       position: absolute;
@@ -498,6 +449,7 @@ export default defineComponent({
       text-align: center;
     }
   }
+
   .geodisaster {
     background-image: url(../assets/地灾A.png);
     background-repeat: no-repeat;
@@ -509,6 +461,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .elevator {
     background-image: url(../assets/电梯A.png);
     background-repeat: no-repeat;
@@ -520,6 +473,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .industrial {
     background-image: url(../assets/工贸A.png);
     background-repeat: no-repeat;
@@ -531,6 +485,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .flood {
     background-image: url(../assets/洪涝A.png);
     background-repeat: no-repeat;
@@ -542,6 +497,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .traffic {
     background-image: url(../assets/交通A.png);
     background-repeat: no-repeat;
@@ -553,6 +509,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .populationdensity {
     background-image: url(../assets/人密A.png);
     background-repeat: no-repeat;
@@ -564,6 +521,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .forest {
     background-image: url(../assets/森火A.png);
     background-repeat: no-repeat;
@@ -575,6 +533,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .chemical {
     background-image: url(../assets/危化A.png);
     background-repeat: no-repeat;
@@ -586,6 +545,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .tailingspond {
     background-image: url(../assets/尾矿A.png);
     background-repeat: no-repeat;
@@ -597,6 +557,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .firecontrol {
     background-image: url(../assets/消防A.png);
     background-repeat: no-repeat;
@@ -608,6 +569,7 @@ export default defineComponent({
       background-size: cover;
     }
   }
+
   .composite {
     background-image: url(../assets/综合A.png);
     background-repeat: no-repeat;
@@ -639,6 +601,7 @@ export default defineComponent({
   // line-height: 22px;
   // word-wrap: break-word;
 }
+
 :deep(.ant-modal-header) {
   display: none;
   // color: rgba(0, 0, 0, 0.85);
@@ -647,6 +610,7 @@ export default defineComponent({
   // line-height: 22px;
   // word-wrap: break-word;
 }
+
 // :deep(.ant-modal-body) {
 //   width: 1000px;
 //   height: 950px;

@@ -1,10 +1,10 @@
 {
   "name": "mew-screen-web",
-  "version": "0.1.5-202301rc2",
+  "version": "0.1.15-202301rc2",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --mode development",
-    "build": "vue-cli-service build --mode production",
+    "serve": "gulp cleanCache && vue-cli-service serve --mode development",
+    "build": "gulp cleanCache && vue-cli-service build --mode production",
     "pushimage": "yarn build && gulp pushImage",
     "lint": "vue-cli-service lint"
   },
