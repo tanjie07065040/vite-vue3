@@ -32,5 +32,6 @@ async function bootstrap() {
   appStore.setAppLink(config.data.APPLINK);
   appStore.setAppDistrict(config.data.DISTRICT);
   appStore.setAppBasicUrl(config.data.BASECLOUD_URL);
+  appStore.setAppLoginUrl(config.data.LOGIN_URL);
 }
 bootstrap();

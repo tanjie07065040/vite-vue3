@@ -125,7 +125,7 @@
 </template>
 <script>
 /* eslint-disable */
-import { defineComponent, onMounted, ref, reactive, onUnmounted } from "vue";
+import { defineComponent, onMounted, ref, reactive, onUnmounted, unref } from "vue";
 import { useRouter } from "vue-router";
 import { useAppStore } from "../store/modules/app";
 import bus from "vue3-eventbus";
@@ -185,6 +185,7 @@ export default defineComponent({
     const initUserInfo = async () => {
       const result = await authServer.getUserInfo();
       currentLoginInfo.value = result.data;
+      appStore.setCurrentLoginInfo(unref(currentLoginInfo))
     };
 
     // 时间日期数据格式化
@@ -214,7 +215,8 @@ export default defineComponent({
     }
 
     // 退出
-    function logout() {
+    async function logout() {
+      await authServer.doLogout();
       appStore.setToken(undefined);
       window.localStorage.removeItem("token");
       const url =
