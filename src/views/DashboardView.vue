@@ -453,132 +453,132 @@ export default defineComponent({
   }
 
   .geodisaster {
-    background-image: url(../assets/地灾A.png);
+    background-image: url(../assets/dizhaiA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/地灾B.png);
+      background-image: url(../assets/dizhaiB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .elevator {
-    background-image: url(../assets/电梯A.png);
+    background-image: url(../assets/diantiA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/电梯B.png);
+      background-image: url(../assets/diantiB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .industrial {
-    background-image: url(../assets/工贸A.png);
+    background-image: url(../assets/gongmaoA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/工贸B.png);
+      background-image: url(../assets/gongmaoB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .flood {
-    background-image: url(../assets/洪涝A.png);
+    background-image: url(../assets/honglaoA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/洪涝B.png);
+      background-image: url(../assets/honglaoB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .traffic {
-    background-image: url(../assets/交通A.png);
+    background-image: url(../assets/jiaotongA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/交通B.png);
+      background-image: url(../assets/jiaotongB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .populationdensity {
-    background-image: url(../assets/人密A.png);
+    background-image: url(../assets/renmiA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/人密B.png);
+      background-image: url(../assets/renmiB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .forest {
-    background-image: url(../assets/森火A.png);
+    background-image: url(../assets/senhuoA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/森火B.png);
+      background-image: url(../assets/senhuoB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .chemical {
-    background-image: url(../assets/危化A.png);
+    background-image: url(../assets/weihuaA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/危化B.png);
+      background-image: url(../assets/weihuaB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .tailingspond {
-    background-image: url(../assets/尾矿A.png);
+    background-image: url(../assets/weikuangA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/尾矿B.png);
+      background-image: url(../assets/weikuangB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .firecontrol {
-    background-image: url(../assets/消防A.png);
+    background-image: url(../assets/xiaofangA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/消防B.png);
+      background-image: url(../assets/xiaofangB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
   }
 
   .composite {
-    background-image: url(../assets/综合A.png);
+    background-image: url(../assets/zongheA.png);
     background-repeat: no-repeat;
 
     &-active,
     &:hover {
-      background-image: url(../assets/综合B.png);
+      background-image: url(../assets/zongheB.png);
       background-repeat: no-repeat;
       background-size: cover;
     }
