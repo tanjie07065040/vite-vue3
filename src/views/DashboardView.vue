@@ -219,11 +219,9 @@ export default defineComponent({
       await authServer.doLogout();
       appStore.setToken(undefined);
       window.localStorage.removeItem("token");
+      window.localStorage.clear();
       const url =
-        appStore.getConfig.AUTHOR_URL +
-        "?redirect_url=" +
-        appStore.getConfig.CALLBACK_URL +
-        "&tag=bigscreen";
+        appStore.getConfig.CALLBACK_URL + '/';
       location.href = url;
     }
 
