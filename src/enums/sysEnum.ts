@@ -14,4 +14,12 @@ export enum SysEnum {
   TAILINGSPOND = "tailingspond",
   // 工贸
   INDUSTRIAL = "industrial",
+  // 电梯
+  ELEVATOR = "elevator",
+  // 消防
+  FIRECONTROL = "firecontrol",
+  // 人密
+  POPULATIONDENSITY = "populationdensity",
+  // 综合
+  COMPOSITE = "composite",
 }

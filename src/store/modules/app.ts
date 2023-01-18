@@ -9,6 +9,8 @@ interface AppState {
   appDistrict: string;
   appBasicUrl: string;
   token?: string;
+  appLoginUrl: string;
+  currentLoginInfo: any;
 }
 export const useAppStore = defineStore({
   id: "app",
@@ -22,6 +24,8 @@ export const useAppStore = defineStore({
     // 基层云服务地址
     appBasicUrl: "",
     token: "",
+    appLoginUrl: "",
+    currentLoginInfo: {},
   }),
   getters: {
     /**
@@ -51,6 +55,12 @@ export const useAppStore = defineStore({
     getToken(): any {
       return this.token || undefined;
     },
+    getAppLoginUrl(): string {
+      return this.appLoginUrl;
+    },
+    getCurrentLoginInfo(): any {
+      return this.currentLoginInfo;
+    }
   },
   actions: {
     /**
@@ -80,6 +90,12 @@ export const useAppStore = defineStore({
     setToken(token: any): string {
       return (this.token = token ? token : '');
     },
+    setAppLoginUrl(appLoginUrl: string): string {
+      return (this.appLoginUrl = appLoginUrl);
+    },
+    setCurrentLoginInfo(loginInfo: any): any {
+      return this.currentLoginInfo = loginInfo;
+    }
   },
 });
 

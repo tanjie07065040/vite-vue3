@@ -3,7 +3,6 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Layout from "@/views/DashboardView.vue";
 import HomeView from "@/views/home/HomeView.vue";
 import { useAppStore } from "@/store/modules/app";
-import Cookie from 'js-cookie';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -48,7 +47,7 @@ router.beforeEach((to, from, next) => {
   const path = to.path || "";
   const appStore = useAppStore();
   const token = window.localStorage.getItem("token") || to.query.token;
-  if(token){
+  if (token) {
     appStore.setToken(token);
   }
   if (!token || token === "undefined") {
@@ -60,7 +59,7 @@ router.beforeEach((to, from, next) => {
       "&tag=bigscreen";
     location.href = url;
     return;
-  } 
+  }
   next();
 });
 
