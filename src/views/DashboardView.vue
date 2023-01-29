@@ -169,8 +169,9 @@ export default defineComponent({
 
     // 初始化
     onMounted(() => {
-      headerBg.value = require("../assets/blue.png");
-      titleBg.value = require("../assets/traffictitle.png");
+      const info = appStore.applink;
+      changeBg(info[0].key);
+      changeTitle(info[0].key);
       start();
       currentWeather.value = "晴 18-20°C";
       currentAppLink.value = appStore.getAppLink;
@@ -227,7 +228,6 @@ export default defineComponent({
 
     // 系统切换显示
     function showModal() {
-      console.log(111);
       visible.value = true;
     }
 
