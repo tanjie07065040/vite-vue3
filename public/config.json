@@ -4,6 +4,7 @@
   "BASECLOUD_URL": "http://172.18.25.37:31715",
   "LOGIN_URL": "http://172.18.25.37:31802",
   "DISTRICT": "合肥市",
+  "BUSINESSURL": "http://localhost:8093",
   "APPLINK": [
     {
       "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTM0OTM0Mn0=",
