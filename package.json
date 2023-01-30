@@ -1,6 +1,6 @@
 {
   "name": "mew-screen-web",
-  "version": "0.3.12-rc5",
+  "version": "0.3.12-rc6",
   "private": true,
   "scripts": {
     "serve": "gulp cleanCache && vue-cli-service serve --mode development",
