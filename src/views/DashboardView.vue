@@ -23,9 +23,11 @@
         <div class="district">{{ currentDistrict }}</div>
         <div class="line"></div>
         <div class="userinfo">{{ currentLoginInfo.name }}</div>
-        <div class="exit" @click="logout">
-          <div><img src="../assets/exit.png" /></div>
-        </div>
+        <a-popconfirm title="确定要退出系统吗?" @confirm="logout" okText="确定" cancelText="取消">
+          <div class="exit">
+            <div><img src="../assets/exit.png" /></div>
+          </div>
+        </a-popconfirm>
         <div class="line"></div>
         <div class="applink" @click="showModal">
           <div><img src="../assets/list.png" /></div>
@@ -134,6 +136,9 @@ import authServer from "../api/auth";
 import weatherServer from "../api/weatherService";
 import { SysEnum } from "../enums/sysEnum";
 import dayjs from "dayjs";
+import {
+  message, confirm
+} from 'ant-design-vue';
 
 export default defineComponent({
   name: "dashboard",
@@ -236,6 +241,7 @@ export default defineComponent({
       const url =
         appStore.getConfig.CALLBACK_URL + '/';
       location.href = url;
+
     }
 
     // 系统切换显示
@@ -245,10 +251,14 @@ export default defineComponent({
 
     // 系统切换
     function jump(item) {
-      visible.value = false;
-      bus.emit("SystemUrl", item.url);
-      changeBg(item.key);
-      changeTitle(item.key);
+      if (item && item.key && item.url) {
+        visible.value = false;
+        bus.emit("SystemUrl", item.url);
+        changeBg(item.key);
+        changeTitle(item.key);
+      } else {
+        message.warn('请联系管理员');
+      }
     }
 
     // 头部背景切换
