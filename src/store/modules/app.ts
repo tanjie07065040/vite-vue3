@@ -11,6 +11,7 @@ interface AppState {
   token?: string;
   appLoginUrl: string;
   currentLoginInfo: any;
+  weatherUrl: string;
 }
 export const useAppStore = defineStore({
   id: "app",
@@ -26,6 +27,7 @@ export const useAppStore = defineStore({
     token: "",
     appLoginUrl: "",
     currentLoginInfo: {},
+    weatherUrl: "",
   }),
   getters: {
     /**
@@ -60,7 +62,10 @@ export const useAppStore = defineStore({
     },
     getCurrentLoginInfo(): any {
       return this.currentLoginInfo;
-    }
+    },
+    getAppWeatherUrl(): string {
+      return this.weatherUrl;
+    },
   },
   actions: {
     /**
@@ -95,7 +100,10 @@ export const useAppStore = defineStore({
     },
     setCurrentLoginInfo(loginInfo: any): any {
       return this.currentLoginInfo = loginInfo;
-    }
+    },
+    setAppWeatherUrl(weatherUrl: string): string {
+      return (this.weatherUrl = weatherUrl);
+    },
   },
 });
 

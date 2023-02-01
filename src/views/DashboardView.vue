@@ -131,6 +131,7 @@ import { useAppStore } from "../store/modules/app";
 import bus from "vue3-eventbus";
 import { dateUtil, getWeek } from "../utils/dateUtil";
 import authServer from "../api/auth";
+import weatherServer from "../api/weatherService";
 import { SysEnum } from "../enums/sysEnum";
 import dayjs from "dayjs";
 
@@ -169,10 +170,11 @@ export default defineComponent({
 
     // 初始化
     onMounted(() => {
-      headerBg.value = require("../assets/blue.png");
-      titleBg.value = require("../assets/traffictitle.png");
+      const info = appStore.applink;
+      changeBg(info[0].key);
+      changeTitle(info[0].key);
       start();
-      currentWeather.value = "晴 18-20°C";
+      initWeatherInfo();
       currentAppLink.value = appStore.getAppLink;
       if (currentAppLink.value && currentAppLink.value.length > 0) {
         currentTitle.value = currentAppLink.value[0].title;
@@ -180,6 +182,17 @@ export default defineComponent({
       currentDistrict.value = appStore.getAppDistrict;
       initUserInfo();
     });
+
+    // 获取天气数据
+    const initWeatherInfo = async () => {
+      const now = dateUtil();
+      const result = await weatherServer.getWeatherInfo();
+      if (result && result.data) {
+        currentWeather.value = result.data;
+      } else {
+        currentWeather.value = "";
+      }
+    };
 
     // 获取登录用户信息
     const initUserInfo = async () => {
@@ -227,7 +240,6 @@ export default defineComponent({
 
     // 系统切换显示
     function showModal() {
-      console.log(111);
       visible.value = true;
     }
 

@@ -4,7 +4,13 @@
   "BASECLOUD_URL": "http://172.18.25.37:31715",
   "LOGIN_URL": "http://172.18.25.37:31802",
   "DISTRICT": "合肥市",
+  "BUSINESSURL": "http://localhost:8093",
   "APPLINK": [
+    {
+      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTM0OTM0Mn0=",
+      "name": "危化专项",
+      "key": "chemical"
+    },
     {
       "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTI3NjE2OX0=?timeStamp=1854c7bb91d",
       "name": "交通专项",
@@ -14,11 +20,6 @@
       "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6NzI2fQ==",
       "name": "防汛专项",
       "key": "flood"
-    },
-    {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTM0OTM0Mn0=",
-      "name": "危化专项",
-      "key": "chemical"
     },
     {
       "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTYwMzM0Nn0=",
