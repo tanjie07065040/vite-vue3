@@ -469,6 +469,11 @@ export default defineComponent({
       font-size: 20px;
       bottom: 8px;
       text-align: center;
+
+      &-active,
+      &:hover {
+        color: #ffa800;
+      }
     }
   }
 
