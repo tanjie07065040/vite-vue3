@@ -479,6 +479,7 @@ export default defineComponent({
     margin-top: 30px;
     flex: 6;
     height: 100%;
+    margin-right: 770px;
   }
 
   .right {
