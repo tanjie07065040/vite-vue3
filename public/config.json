@@ -32,7 +32,7 @@
       "key": "geodisaster"
     },
     {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTMzMzYwNH0=",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6ODI4fQ==?timeStamp=1862ab603eb",
       "name": "森火专项",
       "key": "forest"
     },
@@ -58,7 +58,7 @@
     },
     {
       "url": "",
-      "name": "综合专项",
+      "name": "全景图",
       "key": "composite"
     }
   ]

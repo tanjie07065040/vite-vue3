@@ -33,7 +33,7 @@
           <div><img src="../assets/list.png" /></div>
         </div>
       </div>
-      <video src="../assets/header.webm" autoplay loop muted></video>
+      <video :src="videoBg" autoplay loop muted></video>
     </div>
     <div class="content">
       <router-view />
@@ -118,7 +118,7 @@
               'composite-active': selectData === 'composite',
             },
           ]" @click="selectFunc('composite')">
-            <div class="title-box">综合专项</div>
+            <div class="title-box">全景图</div>
           </div>
         </div>
       </a-modal>
@@ -156,6 +156,7 @@ export default defineComponent({
     const currentAppLink = ref([]);
     const headerBg = ref("");
     const titleBg = ref("");
+    const videoBg = ref("");
     const visible = ref(false);
     const appLinkInfo = appStore.getAppLink;
     const systemUrl = ref("");
@@ -178,6 +179,7 @@ export default defineComponent({
       const info = appStore.applink;
       changeBg(info[0].key);
       changeTitle(info[0].key);
+      changeVideoBg(info[0].key);
       start();
       initWeatherInfo();
       currentAppLink.value = appStore.getAppLink;
@@ -256,6 +258,7 @@ export default defineComponent({
         bus.emit("SystemUrl", item.url);
         changeBg(item.key);
         changeTitle(item.key);
+        changeVideoBg(item.key);
       } else {
         message.warn('请联系管理员');
       }
@@ -275,7 +278,34 @@ export default defineComponent({
         case SysEnum.CHEMICAL:
         case SysEnum.INDUSTRIAL:
         case SysEnum.TAILINGSPOND:
+        case SysEnum.ELEVATOR:
+        case SysEnum.FIRECONTROL:
+        case SysEnum.POPULATIONDENSITY:
+        case SysEnum.COMPOSITE:
           headerBg.value = require("../assets/blue.png");
+          break;
+      }
+    }
+
+    // 头部动画切换
+    function changeVideoBg(system) {
+      switch (system) {
+        case SysEnum.FOREST:
+          videoBg.value = require("../assets/header.webm");
+          break;
+        case SysEnum.GEODISASTER:
+          videoBg.value = require("../assets/header.webm");
+          break;
+        case SysEnum.TRAFFIC:
+        case SysEnum.FLOOD:
+        case SysEnum.CHEMICAL:
+        case SysEnum.INDUSTRIAL:
+        case SysEnum.TAILINGSPOND:
+        case SysEnum.ELEVATOR:
+        case SysEnum.FIRECONTROL:
+        case SysEnum.POPULATIONDENSITY:
+        case SysEnum.COMPOSITE:
+          videoBg.value = ("../assets/header.webm");
           break;
       }
     }
@@ -345,6 +375,7 @@ export default defineComponent({
       logout,
       headerBg,
       titleBg,
+      videoBg,
       visible,
       showModal,
       appLinkInfo,
