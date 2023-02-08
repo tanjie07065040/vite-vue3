@@ -321,7 +321,6 @@ export default defineComponent({
         bus.emit("SystemUrl", item.url);
         changeBg(item.key);
         changeTitle(item.key);
-        changeVideoBg(item.key);
       } else {
         message.warn("请联系管理员");
       }
