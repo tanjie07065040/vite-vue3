@@ -12,7 +12,7 @@
       "key": "chemical"
     },
     {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTI3NjE2OX0=?timeStamp=1854c7bb91d",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6ODExfQ==",
       "name": "交通专项",
       "key": "traffic"
     },
@@ -32,7 +32,7 @@
       "key": "geodisaster"
     },
     {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTMzMzYwNH0=",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6ODI4fQ==?timeStamp=1862ab603eb",
       "name": "森火专项",
       "key": "forest"
     },
@@ -42,23 +42,23 @@
       "key": "industrial"
     },
     {
-      "url": "",
+      "url": "http://112.27.198.15:9832/personal-secrecy-big-screen/#/",
       "name": "人密专项",
       "key": "populationdensity"
     },
     {
-      "url": "",
+      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
       "name": "消防专项",
       "key": "firecontrol"
     },
     {
-      "url": "",
+      "url": "http://112.27.198.15:9832/elevator-big-screen/index.html#",
       "name": "电梯专项",
       "key": "elevator"
     },
     {
       "url": "",
-      "name": "综合专项",
+      "name": "全景图",
       "key": "composite"
     }
   ]

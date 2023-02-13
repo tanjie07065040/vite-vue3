@@ -1,10 +1,13 @@
 <template>
   <div class="layout">
-    <div class="header" :style="{
-      background: 'url(' + headerBg + ')',
-      'background-repeat': 'no-repeat',
-      'background-size': '100% 124px',
-    }">
+    <div
+      class="header"
+      :style="{
+        background: 'url(' + headerBg + ')',
+        'background-repeat': 'no-repeat',
+        'background-size': '100% 124px',
+      }"
+    >
       <div class="left">
         <div class="time">{{ currentTime }}</div>
         <div class="line"></div>
@@ -14,109 +17,169 @@
         <div class="line"></div>
         <div class="weather">{{ currentWeather }}</div>
       </div>
-      <div class="title" :style="{
-        background: 'url(' + titleBg + ')',
-        'background-repeat': 'no-repeat',
-        'background-position': 'center',
-      }"></div>
+      <div
+        class="title"
+        :style="{
+          background: 'url(' + titleBg + ')',
+          'background-repeat': 'no-repeat',
+          'background-position': 'center',
+        }"
+      ></div>
       <div class="right">
         <div class="district">{{ currentDistrict }}</div>
         <div class="line"></div>
         <div class="userinfo">{{ currentLoginInfo.name }}</div>
-        <div class="exit" @click="logout">
-          <div><img src="../assets/exit.png" /></div>
-        </div>
+        <a-popconfirm
+          title="确定要退出系统吗?"
+          @confirm="logout"
+          okText="确定"
+          cancelText="取消"
+        >
+          <div class="exit">
+            <div><img src="../assets/exit.png" /></div>
+          </div>
+        </a-popconfirm>
         <div class="line"></div>
         <div class="applink" @click="showModal">
           <div><img src="../assets/list.png" /></div>
         </div>
       </div>
-      <video src="../assets/header.webm" autoplay loop muted></video>
+      <video :src="webmBg" autoplay loop muted></video>
     </div>
     <div class="content">
       <router-view />
     </div>
     <!-- 系统切换 -->
     <div id="bbox" ref="bbox">
-      <a-modal class="change-system" v-model:visible="visible" title="系统切换" footer="" :getContainer="() => $refs.bbox"
-        destroyOnClose>
+      <a-modal
+        class="change-system"
+        v-model:visible="visible"
+        title="系统切换"
+        footer=""
+        :getContainer="() => $refs.bbox"
+        destroyOnClose
+      >
         <div class="system-box">
-          <div class="tool geodisaster" :class="[
-            {
-              'geodisaster-active': selectData === 'geodisaster',
-            },
-          ]" @click="selectFunc('geodisaster')">
+          <div
+            class="tool geodisaster"
+            :class="[
+              {
+                'geodisaster-active': selectData === 'geodisaster',
+              },
+            ]"
+            @click="selectFunc('geodisaster')"
+          >
             <div class="title-box">地灾专项</div>
           </div>
-          <div class="tool elevator" :class="[
-            {
-              'elevator-active': selectData === 'elevator',
-            },
-          ]" @click="selectFunc('elevator')">
+          <div
+            class="tool elevator"
+            :class="[
+              {
+                'elevator-active': selectData === 'elevator',
+              },
+            ]"
+            @click="selectFunc('elevator')"
+          >
             <div class="title-box">电梯专项</div>
           </div>
-          <div class="tool industrial" :class="[
-            {
-              'industrial-active': selectData === 'industrial',
-            },
-          ]" @click="selectFunc('industrial')">
+          <div
+            class="tool industrial"
+            :class="[
+              {
+                'industrial-active': selectData === 'industrial',
+              },
+            ]"
+            @click="selectFunc('industrial')"
+          >
             <div class="title-box">工贸专项</div>
           </div>
-          <div class="tool flood" :class="[
-            {
-              'flood-active': selectData === 'flood',
-            },
-          ]" @click="selectFunc('flood')">
+          <div
+            class="tool flood"
+            :class="[
+              {
+                'flood-active': selectData === 'flood',
+              },
+            ]"
+            @click="selectFunc('flood')"
+          >
             <div class="title-box">防汛专项</div>
           </div>
-          <div class="tool traffic" :class="[
-            {
-              'traffic-active': selectData === 'traffic',
-            },
-          ]" @click="selectFunc('traffic')">
+          <div
+            class="tool traffic"
+            :class="[
+              {
+                'traffic-active': selectData === 'traffic',
+              },
+            ]"
+            @click="selectFunc('traffic')"
+          >
             <div class="title-box">交通专项</div>
           </div>
-          <div class="tool populationdensity" :class="[
-            {
-              'populationdensity-active': selectData === 'populationdensity',
-            },
-          ]" @click="selectFunc('populationdensity')">
+          <div
+            class="tool populationdensity"
+            :class="[
+              {
+                'populationdensity-active': selectData === 'populationdensity',
+              },
+            ]"
+            @click="selectFunc('populationdensity')"
+          >
             <div class="title-box">人密专项</div>
           </div>
-          <div class="tool forest" :class="[
-            {
-              'forest-active': selectData === 'forest',
-            },
-          ]" @click="selectFunc('forest')">
+          <div
+            class="tool forest"
+            :class="[
+              {
+                'forest-active': selectData === 'forest',
+              },
+            ]"
+            @click="selectFunc('forest')"
+          >
             <div class="title-box">森火专项</div>
           </div>
-          <div class="tool chemical" :class="[
-            {
-              'chemical-active': selectData === 'chemical',
-            },
-          ]" @click="selectFunc('chemical')">
+          <div
+            class="tool chemical"
+            :class="[
+              {
+                'chemical-active': selectData === 'chemical',
+              },
+            ]"
+            @click="selectFunc('chemical')"
+          >
             <div class="title-box">危化专项</div>
           </div>
-          <div class="tool tailingspond" :class="[
-            {
-              'tailingspond-active': selectData === 'tailingspond',
-            },
-          ]" @click="selectFunc('tailingspond')">
+          <div
+            class="tool tailingspond"
+            :class="[
+              {
+                'tailingspond-active': selectData === 'tailingspond',
+              },
+            ]"
+            @click="selectFunc('tailingspond')"
+          >
             <div class="title-box">尾矿专项</div>
           </div>
-          <div class="tool firecontrol" :class="[
-            {
-              'firecontrol-active': selectData === 'firecontrol',
-            },
-          ]" @click="selectFunc('firecontrol')">
+          <div
+            class="tool firecontrol"
+            :class="[
+              {
+                'firecontrol-active': selectData === 'firecontrol',
+              },
+            ]"
+            @click="selectFunc('firecontrol')"
+          >
             <div class="title-box">消防专项</div>
           </div>
-          <div class="tool composite" :class="[
-            {
-              'composite-active': selectData === 'composite',
-            },
-          ]" @click="selectFunc('composite')">
-            <div class="title-box">综合专项</div>
+          <div
+            class="tool composite"
+            :class="[
+              {
+                'composite-active': selectData === 'composite',
+              },
+            ]"
+            @click="selectFunc('composite')"
+          >
+            <div class="title-box">全景图</div>
           </div>
         </div>
       </a-modal>
@@ -125,7 +188,14 @@
 </template>
 <script>
 /* eslint-disable */
-import { defineComponent, onMounted, ref, reactive, onUnmounted, unref } from "vue";
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  reactive,
+  onUnmounted,
+  unref,
+} from "vue";
 import { useRouter } from "vue-router";
 import { useAppStore } from "../store/modules/app";
 import bus from "vue3-eventbus";
@@ -134,6 +204,7 @@ import authServer from "../api/auth";
 import weatherServer from "../api/weatherService";
 import { SysEnum } from "../enums/sysEnum";
 import dayjs from "dayjs";
+import { message, confirm } from "ant-design-vue";
 
 export default defineComponent({
   name: "dashboard",
@@ -151,6 +222,7 @@ export default defineComponent({
     const currentAppLink = ref([]);
     const headerBg = ref("");
     const titleBg = ref("");
+    const webmBg = ref("");
     const visible = ref(false);
     const appLinkInfo = appStore.getAppLink;
     const systemUrl = ref("");
@@ -198,7 +270,7 @@ export default defineComponent({
     const initUserInfo = async () => {
       const result = await authServer.getUserInfo();
       currentLoginInfo.value = result.data;
-      appStore.setCurrentLoginInfo(unref(currentLoginInfo))
+      appStore.setCurrentLoginInfo(unref(currentLoginInfo));
     };
 
     // 时间日期数据格式化
@@ -233,8 +305,7 @@ export default defineComponent({
       appStore.setToken(undefined);
       window.localStorage.removeItem("token");
       window.localStorage.clear();
-      const url =
-        appStore.getConfig.CALLBACK_URL + '/';
+      const url = appStore.getConfig.CALLBACK_URL + "/";
       location.href = url;
     }
 
@@ -245,10 +316,14 @@ export default defineComponent({
 
     // 系统切换
     function jump(item) {
-      visible.value = false;
-      bus.emit("SystemUrl", item.url);
-      changeBg(item.key);
-      changeTitle(item.key);
+      if (item && item.key && item.url) {
+        visible.value = false;
+        bus.emit("SystemUrl", item.url);
+        changeBg(item.key);
+        changeTitle(item.key);
+      } else {
+        message.warn("请联系管理员");
+      }
     }
 
     // 头部背景切换
@@ -256,16 +331,23 @@ export default defineComponent({
       switch (system) {
         case SysEnum.FOREST:
           headerBg.value = require("../assets/forestbg.png");
+          webmBg.value = require("../assets/sh.webm");
           break;
         case SysEnum.GEODISASTER:
           headerBg.value = require("../assets/geodisasterbg.png");
+          webmBg.value = require("../assets/dz.webm");
           break;
         case SysEnum.TRAFFIC:
         case SysEnum.FLOOD:
         case SysEnum.CHEMICAL:
         case SysEnum.INDUSTRIAL:
         case SysEnum.TAILINGSPOND:
+        case SysEnum.ELEVATOR:
+        case SysEnum.FIRECONTROL:
+        case SysEnum.POPULATIONDENSITY:
+        case SysEnum.COMPOSITE:
           headerBg.value = require("../assets/blue.png");
+          webmBg.value = require("../assets/header.webm");
           break;
       }
     }
@@ -335,6 +417,7 @@ export default defineComponent({
       logout,
       headerBg,
       titleBg,
+      webmBg,
       visible,
       showModal,
       appLinkInfo,
@@ -378,7 +461,7 @@ export default defineComponent({
   }
 
   .left {
-    width: 20%;
+    flex: 2;
     height: 100%;
     display: flex;
     align-items: center;
@@ -394,22 +477,27 @@ export default defineComponent({
       margin-left: 1vw;
     }
 
-    .date {}
+    .date {
+    }
 
-    .weather {}
+    .weather {
+    }
   }
 
   .title {
     margin-top: 30px;
-    width: 60%;
+    flex: 6;
     height: 100%;
+    margin-right: 770px;
   }
 
   .right {
-    width: 20%;
+    flex: 2;
     height: 100%;
     display: flex;
     align-items: center;
+    position: absolute;
+    right: 30px;
 
     .line {
       width: 5px;
@@ -419,17 +507,17 @@ export default defineComponent({
     }
 
     .district {
-      margin-left: 10vw;
     }
 
     .applink {
       margin-bottom: 6px;
     }
 
-    .userinfo {}
+    .userinfo {
+      margin-right: 10px;
+    }
 
     .exit {
-      margin-left: 20px;
       margin-bottom: 6px;
     }
   }
@@ -455,10 +543,15 @@ export default defineComponent({
     .title-box {
       width: 100%;
       position: absolute;
-      color: #ffffff;
       font-size: 20px;
       bottom: 8px;
       text-align: center;
+      color: #ffffff;
+
+      &-active,
+      &:hover {
+        color: #ffa800;
+      }
     }
   }
 
@@ -468,6 +561,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/dizhaiB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -480,6 +577,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/diantiB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -492,6 +593,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/gongmaoB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -504,6 +609,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/honglaoB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -516,6 +625,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/jiaotongB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -528,6 +641,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/renmiB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -540,6 +657,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/senhuoB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -552,6 +673,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/weihuaB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -564,6 +689,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/weikuangB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -576,6 +705,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/xiaofangB.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -588,6 +721,10 @@ export default defineComponent({
 
     &-active,
     &:hover {
+      .title-box {
+        color: #ffa800;
+      }
+
       background-image: url(../assets/zongheB.png);
       background-repeat: no-repeat;
       background-size: cover;
