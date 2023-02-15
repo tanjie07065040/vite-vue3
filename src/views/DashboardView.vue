@@ -441,7 +441,7 @@ export default defineComponent({
 }
 
 .header {
-  height: 8vh;
+  height: 9vh;
   width: 100%;
   display: flex;
   text-align: center;
@@ -456,7 +456,7 @@ export default defineComponent({
     mix-blend-mode: screen;
     pointer-events: none;
     left: 0;
-    right: 0;
+    right: 10;
     top: 0;
   }
 
@@ -471,16 +471,23 @@ export default defineComponent({
       height: 25%;
       background-color: #4ac2fa;
       margin: 0 20px 5px 20px;
+      margin-top: -20px;
     }
 
     .time {
       margin-left: 1vw;
+      margin-top: -20px;
     }
 
     .date {
+      margin-top: -20px;
     }
 
     .weather {
+      margin-top: -20px;
+    }
+    .week {
+      margin-top: -20px;
     }
   }
 
@@ -489,6 +496,7 @@ export default defineComponent({
     flex: 6;
     height: 100%;
     margin-right: 770px;
+    margin-top: -7px;
   }
 
   .right {
@@ -504,21 +512,26 @@ export default defineComponent({
       height: 25%;
       background-color: #4ac2fa;
       margin: 0 20px 5px 20px;
+      margin-top: -20px;
     }
 
     .district {
+      margin-top: -20px;
     }
 
     .applink {
       margin-bottom: 6px;
+      margin-top: -20px;
     }
 
     .userinfo {
       margin-right: 10px;
+      margin-top: -20px;
     }
 
     .exit {
       margin-bottom: 6px;
+      margin-top: -20px;
     }
   }
 }
