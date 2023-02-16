@@ -51,7 +51,6 @@ router.beforeEach((to, from, next) => {
     appStore.setToken(token);
   }
   if (!token || token === "undefined") {
-    localStorage.removeItem("token");
     const url =
       appStore.getConfig.AUTHOR_URL +
       "?redirect_url=" +
