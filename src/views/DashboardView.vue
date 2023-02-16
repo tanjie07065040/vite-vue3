@@ -61,103 +61,15 @@
       >
         <div class="system-box">
           <div
-            class="tool geodisaster"
+            class="tool composite"
             :class="[
               {
-                'geodisaster-active': selectData === 'geodisaster',
+                'composite-active': selectData === 'composite',
               },
             ]"
-            @click="selectFunc('geodisaster')"
+            @click="selectFunc('composite')"
           >
-            <div class="title-box">地灾专项</div>
-          </div>
-          <div
-            class="tool elevator"
-            :class="[
-              {
-                'elevator-active': selectData === 'elevator',
-              },
-            ]"
-            @click="selectFunc('elevator')"
-          >
-            <div class="title-box">电梯专项</div>
-          </div>
-          <div
-            class="tool industrial"
-            :class="[
-              {
-                'industrial-active': selectData === 'industrial',
-              },
-            ]"
-            @click="selectFunc('industrial')"
-          >
-            <div class="title-box">工贸专项</div>
-          </div>
-          <div
-            class="tool flood"
-            :class="[
-              {
-                'flood-active': selectData === 'flood',
-              },
-            ]"
-            @click="selectFunc('flood')"
-          >
-            <div class="title-box">防汛专项</div>
-          </div>
-          <div
-            class="tool traffic"
-            :class="[
-              {
-                'traffic-active': selectData === 'traffic',
-              },
-            ]"
-            @click="selectFunc('traffic')"
-          >
-            <div class="title-box">交通专项</div>
-          </div>
-          <div
-            class="tool populationdensity"
-            :class="[
-              {
-                'populationdensity-active': selectData === 'populationdensity',
-              },
-            ]"
-            @click="selectFunc('populationdensity')"
-          >
-            <div class="title-box">人密专项</div>
-          </div>
-          <div
-            class="tool forest"
-            :class="[
-              {
-                'forest-active': selectData === 'forest',
-              },
-            ]"
-            @click="selectFunc('forest')"
-          >
-            <div class="title-box">森火专项</div>
-          </div>
-          <div
-            class="tool chemical"
-            :class="[
-              {
-                'chemical-active': selectData === 'chemical',
-              },
-            ]"
-            @click="selectFunc('chemical')"
-          >
-            <div class="title-box">危化专项</div>
-          </div>
-          <div
-            class="tool tailingspond"
-            :class="[
-              {
-                'tailingspond-active': selectData === 'tailingspond',
-              },
-            ]"
-            @click="selectFunc('tailingspond')"
-          >
-            <div class="title-box">尾矿专项</div>
+            <div class="title-box">全景图</div>
           </div>
           <div
             class="tool firecontrol"
@@ -168,18 +80,109 @@
             ]"
             @click="selectFunc('firecontrol')"
           >
-            <div class="title-box">消防专项</div>
+            <div class="title-box">消防安全风险专项</div>
           </div>
           <div
-            class="tool composite"
+            class="tool elevator"
             :class="[
               {
-                'composite-active': selectData === 'composite',
+                'elevator-active': selectData === 'elevator',
               },
             ]"
-            @click="selectFunc('composite')"
+            @click="selectFunc('elevator')"
           >
-            <div class="title-box">全景图</div>
+            <div class="title-box">电梯安全风险专项</div>
+          </div>
+          <div
+            class="tool populationdensity"
+            :class="[
+              {
+                'populationdensity-active': selectData === 'populationdensity',
+              },
+            ]"
+            @click="selectFunc('populationdensity')"
+          >
+            <div class="title-box">人员密集场所安全风险专项</div>
+          </div>
+          <div
+            class="tool traffic"
+            :class="[
+              {
+                'traffic-active': selectData === 'traffic',
+              },
+            ]"
+            @click="selectFunc('traffic')"
+          >
+            <div class="title-box">城市交通风险专项</div>
+          </div>
+          <div
+            class="tool chemical"
+            :class="[
+              {
+                'chemical-active': selectData === 'chemical',
+              },
+            ]"
+            @click="selectFunc('chemical')"
+          >
+            <div class="title-box">危化品安全生产风险专项</div>
+          </div>
+          <div
+            class="tool tailingspond"
+            :class="[
+              {
+                'tailingspond-active': selectData === 'tailingspond',
+              },
+            ]"
+            @click="selectFunc('tailingspond')"
+          >
+            <div class="title-box">尾矿库安全风险专项</div>
+          </div>
+          <div
+            class="tool industrial"
+            :class="[
+              {
+                'industrial-active': selectData === 'industrial',
+              },
+            ]"
+            @click="selectFunc('industrial')"
+          >
+            <div class="title-box">工贸企业安全风险专项</div>
+          </div>
+
+          <div
+            class="tool flood"
+            :class="[
+              {
+                'flood-active': selectData === 'flood',
+              },
+            ]"
+            @click="selectFunc('flood')"
+          >
+            <div class="title-box">洪涝灾害风险专项</div>
+          </div>
+
+          <div
+            class="tool forest"
+            :class="[
+              {
+                'forest-active': selectData === 'forest',
+              },
+            ]"
+            @click="selectFunc('forest')"
+          >
+            <div class="title-box">森林火灾风险专项</div>
+          </div>
+
+          <div
+            class="tool geodisaster"
+            :class="[
+              {
+                'geodisaster-active': selectData === 'geodisaster',
+              },
+            ]"
+            @click="selectFunc('geodisaster')"
+          >
+            <div class="title-box">地灾灾害风险专项</div>
           </div>
         </div>
       </a-modal>

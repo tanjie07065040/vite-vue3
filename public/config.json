@@ -1,5 +1,5 @@
 {
-  "AUTHOR_URL": "http://mew.gsafety.com:30662/mew/login/#/login",
+  "AUTHOR_URL": "http://localhost:3101/mew/login/#/login",
   "CALLBACK_URL": "http://localhost:8080",
   "BASECLOUD_URL": "http://172.18.25.37:31715",
   "LOGIN_URL": "http://172.18.25.37:31802",
@@ -7,57 +7,57 @@
   "BUSINESSURL": "http://localhost:8093",
   "APPLINK": [
     {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTM0OTM0Mn0=",
-      "name": "危化专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "危化品安全生产风险专项",
       "key": "chemical"
     },
     {
-      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6ODExfQ==",
-      "name": "交通专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "城市交通风险专项",
       "key": "traffic"
     },
     {
-      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6NzI2fQ==",
-      "name": "防汛专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "洪涝灾害风险专项",
       "key": "flood"
     },
     {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTYwMzM0Nn0=",
-      "name": "尾矿库专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "尾矿库安全风险专项",
       "key": "tailingspond"
     },
     {
-      "url": "https://workspace.easyv.cloud/shareScreen/eyJzY3JlZW5JZCI6MTUzMDEyNn0=?timeStamp=1854d61a8e3",
-      "name": "地灾专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "地灾灾害风险专项",
       "key": "geodisaster"
     },
     {
-      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6ODI4fQ==?timeStamp=1862ab603eb",
-      "name": "森火专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "森林火灾风险专项",
       "key": "forest"
     },
     {
-      "url": "",
-      "name": "工贸专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "工贸企业安全风险专项",
       "key": "industrial"
     },
     {
-      "url": "http://112.27.198.15:9832/personal-secrecy-big-screen/#/",
-      "name": "人密专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "人员密集场所安全风险专项",
       "key": "populationdensity"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
-      "name": "消防专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "消防安全风险专项",
       "key": "firecontrol"
     },
     {
-      "url": "http://112.27.198.15:9832/elevator-big-screen/index.html#",
-      "name": "电梯专项",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
+      "name": "电梯安全风险专项",
       "key": "elevator"
     },
     {
-      "url": "",
+      "url": "http://172.18.7.185/shareScreen/eyJzY3JlZW5JZCI6MTAxMH0=",
       "name": "全景图",
       "key": "composite"
     }
