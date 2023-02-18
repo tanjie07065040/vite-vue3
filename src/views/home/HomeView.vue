@@ -2,7 +2,7 @@
   <div class="home" style="height: 100%; width: 100%">
     <iframe
       :src="frameSrc"
-      style="pointer-events: unset;"
+      style="pointer-events: unset !important"
       id="frames"
       frameborder="0"
       sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation allow-downloads"
