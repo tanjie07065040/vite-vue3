@@ -792,7 +792,7 @@ export default defineComponent({
 // }
 :deep(.ant-modal-content) {
   width: 700px;
-  height: 1000px;
+  max-height: 970px;
   padding: 0;
   background: url("../assets/changeSystemBg.png") no-repeat;
   background-position-x: -25px;
