@@ -292,7 +292,11 @@ export default defineComponent({
       currentDate.value =
         now.get("y") + "-" + (now.get("M") + 1) + "-" + now.get("D");
       currentTime.value =
-        now.format("HH") + ":" + now.format("mm") + ":" + now.get("s");
+        now.format("HH") +
+        ":" +
+        now.format("mm") +
+        ":" +
+        (now.get("s") > 9 ? now.get("s") : "0" + now.get("s"));
       currentWeek.value = getWeek();
     };
 
