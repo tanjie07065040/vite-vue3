@@ -231,6 +231,7 @@ export default defineComponent({
     const systemUrl = ref("");
     const selectData = ref("");
     let timer;
+    let weatherTimer;
 
     const state = reactive({
       year: 0,
@@ -249,7 +250,7 @@ export default defineComponent({
       changeBg(info[0].key);
       changeTitle(info[0].key);
       start();
-      initWeatherInfo();
+      weatherStart();
       currentAppLink.value = appStore.getAppLink;
       if (currentAppLink.value && currentAppLink.value.length > 0) {
         currentTitle.value = currentAppLink.value[0].title;
@@ -258,12 +259,18 @@ export default defineComponent({
       initUserInfo();
     });
 
+    const weatherStart = () => {
+      initWeatherInfo();
+      clearInterval(weatherTimer);
+      weatherTimer = setInterval(() => update(), 1000 * 60 * 60 * 24);
+    };
+
     // 获取天气数据
     const initWeatherInfo = async () => {
       const now = dateUtil();
       const result = await weatherServer.getWeatherInfo();
       if (result && result.data) {
-        currentWeather.value = result.data;
+        currentWeather.value = result.data + "℃";
       } else {
         currentWeather.value = "";
       }
@@ -283,10 +290,13 @@ export default defineComponent({
       state.month = now.get("M") + 1;
       state.day = now.get("D");
       currentDate.value =
-        now.get("y") + "-" + now.get("M") + 1 + "-" + now.get("D");
+        now.get("y") + "-" + (now.get("M") + 1) + "-" + now.get("D");
       currentTime.value =
-        now.format("HH") + ":" + now.format("mm") + ":" + now.get("s");
-      console.log(dayjs().day());
+        now.format("HH") +
+        ":" +
+        now.format("mm") +
+        ":" +
+        (now.get("s") > 9 ? now.get("s") : "0" + now.get("s"));
       currentWeek.value = getWeek();
     };
 
@@ -300,6 +310,7 @@ export default defineComponent({
     // 停止时间日期计时器
     function stop() {
       clearInterval(timer);
+      clearInterval(weatherTimer);
     }
 
     // 退出
