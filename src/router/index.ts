@@ -28,7 +28,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/:path(.*)*",
     name: "Other",
-    redirect: "/dashboard/home",
+    redirect: "/",
     meta: {
       title: "Other",
     },
