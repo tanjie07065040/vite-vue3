@@ -4,7 +4,7 @@
   "BASECLOUD_URL": "https://mew.gsafety.com:30665",
   "LOGIN_URL": "https://mew.gsafety.com:30665",
   "DISTRICT": "合肥市",
-  "BUSINESSURL": "http://localhost:8093",
+  "BUSINESSURL": "https://mew.gsafety.com:30665",
   "APPLINK": [
     {
       "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
