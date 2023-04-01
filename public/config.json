@@ -1,10 +1,10 @@
 {
-  "AUTHOR_URL": "http://localhost:3100/mew/login/#/login",
-  "CALLBACK_URL": "http://localhost:8080",
-  "BASECLOUD_URL": "http://172.18.25.37:31715",
-  "LOGIN_URL": "http://172.18.25.37:31802",
+  "AUTHOR_URL": "https://mew.gsafety.com:30665/mew/login/#/login",
+  "CALLBACK_URL": "https://mew.gsafety.com:30665/mew/screen",
+  "BASECLOUD_URL": "https://mew.gsafety.com:30665",
+  "LOGIN_URL": "https://mew.gsafety.com:30665",
   "DISTRICT": "合肥市",
-  "BUSINESSURL": "http://localhost:8093",
+  "BUSINESSURL": "https://mew.gsafety.com:30665",
   "APPLINK": [
     {
       "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
