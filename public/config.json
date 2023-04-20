@@ -1,6 +1,6 @@
 {
   "AUTHOR_URL": "https://mew.gsafety.com:30665/mew/login/#/login",
-  "CALLBACK_URL": "https://mew.gsafety.com:30665/mew/screen",
+  "CALLBACK_URL": "http://localhost:8080",
   "BASECLOUD_URL": "https://mew.gsafety.com:30665",
   "LOGIN_URL": "https://mew.gsafety.com:30665",
   "DISTRICT": "合肥市",
