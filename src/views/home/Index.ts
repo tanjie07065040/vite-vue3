@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { defineComponent, onMounted, ref, watch } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { useAppStore } from "../../store/modules/app";
 import bus from "vue3-eventbus";
 export default defineComponent({
@@ -27,14 +27,10 @@ export default defineComponent({
         // 系统URL变化后跳转
         function jumpSystem(url: string) {
             frameSrc.value = '';
-            setInterval(() => {
+            setTimeout(() => {
                 frameSrc.value = url + "#token=Bearer " + appStore.getToken;
-            }, 500)
-            // const doc = document.getElementById('iframes');
-            // if (!doc) { return false; } else {
-            //   // 同源才可以刷新浏览器否则跨域拦截
-            //   // doc.contentWindow.location.reload(true);
-            // }
+            }, 100)
+
         }
 
         function hideLoading() { }
