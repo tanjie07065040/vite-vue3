@@ -1,0 +1,340 @@
+.layout {
+    max-width: 3840px;
+    max-height: 1080px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .header {
+    height: 9vh;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+  
+    video {
+      position: fixed;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      left: 0;
+      right: 10;
+      top: 0;
+    }
+  
+    .left {
+      flex: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+  
+      .line {
+        width: 5px;
+        height: 25%;
+        background-color: #4ac2fa;
+        margin: 0 20px 5px 20px;
+        margin-top: -20px;
+      }
+  
+      .time {
+        margin-left: 1vw;
+        margin-top: -20px;
+      }
+  
+      .date {
+        margin-top: -20px;
+      }
+  
+      .weather {
+        margin-top: -20px;
+      }
+      .week {
+        margin-top: -20px;
+      }
+    }
+  
+    .title {
+      margin-top: 30px;
+      flex: 6;
+      height: 100%;
+      margin-right: 770px;
+      margin-top: -7px;
+    }
+  
+    .right {
+      flex: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 30px;
+  
+      .line {
+        width: 5px;
+        height: 25%;
+        background-color: #4ac2fa;
+        margin: 0 20px 5px 20px;
+        margin-top: -20px;
+      }
+  
+      .district {
+        margin-top: -20px;
+      }
+  
+      .applink {
+        margin-bottom: 6px;
+        margin-top: -20px;
+      }
+  
+      .userinfo {
+        margin-right: 10px;
+        margin-top: -20px;
+      }
+  
+      .exit {
+        margin-bottom: 6px;
+        margin-top: -20px;
+      }
+    }
+  }
+  
+  .content {
+    height: 1080px;
+    width: 100%;
+  }
+  
+  .system-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: wrap;
+  
+    .tool {
+      width: 298px;
+      height: 138px;
+      margin: 18px 10px 0px 5px;
+      position: relative;
+  
+      .title-box {
+        width: 100%;
+        position: absolute;
+        font-size: 20px;
+        bottom: 8px;
+        text-align: center;
+        color: #ffffff;
+  
+        &-active,
+        &:hover {
+          color: #ffa800;
+        }
+      }
+    }
+  
+    .geodisaster {
+      background-image: url(../assets/dizhaiA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/dizhaiB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .elevator {
+      background-image: url(../assets/diantiA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/diantiB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .industrial {
+      background-image: url(../assets/gongmaoA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/gongmaoB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .flood {
+      background-image: url(../assets/honglaoA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/honglaoB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .traffic {
+      background-image: url(../assets/jiaotongA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/jiaotongB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .populationdensity {
+      background-image: url(../assets/renmiA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/renmiB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .forest {
+      background-image: url(../assets/senhuoA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/senhuoB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .chemical {
+      background-image: url(../assets/weihuaA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/weihuaB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .tailingspond {
+      background-image: url(../assets/weikuangA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/weikuangB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .firecontrol {
+      background-image: url(../assets/xiaofangA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/xiaofangB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  
+    .composite {
+      background-image: url(../assets/zongheA.png);
+      background-repeat: no-repeat;
+  
+      &-active,
+      &:hover {
+        .title-box {
+          color: #ffa800;
+        }
+  
+        background-image: url(../assets/zongheB.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+  
+  :deep(.ant-modal) {
+    position: relative;
+    top: 70px !important;
+    left: 39.4vw !important;
+  }
+  
+  :deep(.ant-modal-close) {
+    color: #ffffff;
+  }
+  
+  :deep(.ant-modal-title) {
+    display: none;
+  }
+  
+  :deep(.ant-modal-header) {
+    display: none;
+  }
+  
+  :deep(.ant-modal-content) {
+    width: 700px;
+    max-height: 970px;
+    padding: 0;
+    background: url("../assets/changeSystemBg.png") no-repeat;
+    background-position-x: -25px;
+  }
