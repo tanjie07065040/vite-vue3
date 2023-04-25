@@ -1,13 +1,10 @@
 <template>
   <div class="layout">
-    <div
-      class="header"
-      :style="{
-        background: 'url(' + headerBg + ')',
-        'background-repeat': 'no-repeat',
-        'background-size': '100% 124px',
-      }"
-    >
+    <div class="header" :style="{
+      background: 'url(' + headerBg + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': '100% 124px',
+    }">
       <div class="left">
         <div class="time">{{ currentTime }}</div>
         <div class="line"></div>
@@ -17,24 +14,16 @@
         <div class="line"></div>
         <div class="weather">{{ currentWeather }}</div>
       </div>
-      <div
-        class="title"
-        :style="{
-          background: 'url(' + titleBg + ')',
-          'background-repeat': 'no-repeat',
-          'background-position': 'center',
-        }"
-      ></div>
+      <div class="title" :style="{
+        background: 'url(' + titleBg + ')',
+        'background-repeat': 'no-repeat',
+        'background-position': 'center',
+      }"></div>
       <div class="right">
         <div class="district">{{ currentDistrict }}</div>
         <div class="line"></div>
         <div class="userinfo">{{ currentLoginInfo.name }}</div>
-        <a-popconfirm
-          title="确定要退出系统吗?"
-          @confirm="logout"
-          okText="确定"
-          cancelText="取消"
-        >
+        <a-popconfirm title="确定要退出系统吗?" @confirm="logout" okText="确定" cancelText="取消">
           <div class="exit">
             <div><img src="../assets/exit.png" /></div>
           </div>
@@ -51,137 +40,87 @@
     </div>
     <!-- 系统切换 -->
     <div id="bbox" ref="bbox">
-      <a-modal
-        class="change-system"
-        v-model:visible="visible"
-        title="系统切换"
-        footer=""
-        :getContainer="() => $refs.bbox"
-        destroyOnClose
-      >
+      <a-modal class="change-system" v-model:visible="visible" title="系统切换" footer="" :getContainer="() => $refs.bbox"
+        destroyOnClose>
         <div class="system-box">
-          <div
-            class="tool composite"
-            :class="[
+          <div class="tool composite" :class="[
               {
                 'composite-active': selectData === 'composite',
               },
-            ]"
-            @click="selectFunc('composite')"
-          >
+            ]" @click="selectFunc('composite')">
             <div class="title-box">全景图</div>
           </div>
-          <div
-            class="tool firecontrol"
-            :class="[
+          <div class="tool firecontrol" :class="[
               {
                 'firecontrol-active': selectData === 'firecontrol',
               },
-            ]"
-            @click="selectFunc('firecontrol')"
-          >
+            ]" @click="selectFunc('firecontrol')">
             <div class="title-box">消防安全风险专项</div>
           </div>
-          <div
-            class="tool elevator"
-            :class="[
+          <div class="tool elevator" :class="[
               {
                 'elevator-active': selectData === 'elevator',
               },
-            ]"
-            @click="selectFunc('elevator')"
-          >
+            ]" @click="selectFunc('elevator')">
             <div class="title-box">电梯安全风险专项</div>
           </div>
-          <div
-            class="tool populationdensity"
-            :class="[
+          <div class="tool populationdensity" :class="[
               {
                 'populationdensity-active': selectData === 'populationdensity',
               },
-            ]"
-            @click="selectFunc('populationdensity')"
-          >
+            ]" @click="selectFunc('populationdensity')">
             <div class="title-box">人员密集场所安全风险专项</div>
           </div>
-          <div
-            class="tool traffic"
-            :class="[
+          <div class="tool traffic" :class="[
               {
                 'traffic-active': selectData === 'traffic',
               },
-            ]"
-            @click="selectFunc('traffic')"
-          >
+            ]" @click="selectFunc('traffic')">
             <div class="title-box">城市交通风险专项</div>
           </div>
-          <div
-            class="tool chemical"
-            :class="[
+          <div class="tool chemical" :class="[
               {
                 'chemical-active': selectData === 'chemical',
               },
-            ]"
-            @click="selectFunc('chemical')"
-          >
+            ]" @click="selectFunc('chemical')">
             <div class="title-box">危化品安全生产风险专项</div>
           </div>
-          <div
-            class="tool tailingspond"
-            :class="[
+          <div class="tool tailingspond" :class="[
               {
                 'tailingspond-active': selectData === 'tailingspond',
               },
-            ]"
-            @click="selectFunc('tailingspond')"
-          >
+            ]" @click="selectFunc('tailingspond')">
             <div class="title-box">尾矿库安全风险专项</div>
           </div>
-          <div
-            class="tool industrial"
-            :class="[
+          <div class="tool industrial" :class="[
               {
                 'industrial-active': selectData === 'industrial',
               },
-            ]"
-            @click="selectFunc('industrial')"
-          >
+            ]" @click="selectFunc('industrial')">
             <div class="title-box">工贸企业安全风险专项</div>
           </div>
 
-          <div
-            class="tool flood"
-            :class="[
+          <div class="tool flood" :class="[
               {
                 'flood-active': selectData === 'flood',
               },
-            ]"
-            @click="selectFunc('flood')"
-          >
+            ]" @click="selectFunc('flood')">
             <div class="title-box">洪涝灾害风险专项</div>
           </div>
 
-          <div
-            class="tool forest"
-            :class="[
+          <div class="tool forest" :class="[
               {
                 'forest-active': selectData === 'forest',
               },
-            ]"
-            @click="selectFunc('forest')"
-          >
+            ]" @click="selectFunc('forest')">
             <div class="title-box">森林火灾风险专项</div>
           </div>
 
-          <div
-            class="tool geodisaster"
-            :class="[
+          <div class="tool geodisaster" :class="[
               {
                 'geodisaster-active': selectData === 'geodisaster',
               },
-            ]"
-            @click="selectFunc('geodisaster')"
-          >
+            ]" @click="selectFunc('geodisaster')">
             <div class="title-box">地灾灾害风险专项</div>
           </div>
         </div>
@@ -189,628 +128,10 @@
     </div>
   </div>
 </template>
-<script>
-/* eslint-disable */
-import {
-  defineComponent,
-  onMounted,
-  ref,
-  reactive,
-  onUnmounted,
-  unref,
-} from "vue";
-import { useRouter } from "vue-router";
-import { useAppStore } from "../store/modules/app";
-import bus from "vue3-eventbus";
-import { dateUtil, getWeek } from "../utils/dateUtil";
-import authServer from "../api/auth";
-import weatherServer from "../api/weatherService";
-import { SysEnum } from "../enums/sysEnum";
-import dayjs from "dayjs";
-import { message, confirm } from "ant-design-vue";
+<script src="./Index.ts">
 
-export default defineComponent({
-  name: "dashboard",
-  components: {},
-  setup() {
-    const router = useRouter();
-    const appStore = useAppStore();
-    const currentTitle = ref("");
-    const currentTime = ref("");
-    const currentDate = ref("");
-    const currentWeek = ref("");
-    const currentWeather = ref("");
-    const currentDistrict = ref("");
-    const currentLoginInfo = ref("");
-    const currentAppLink = ref([]);
-    const headerBg = ref("");
-    const titleBg = ref("");
-    const webmBg = ref("");
-    const visible = ref(false);
-    const appLinkInfo = appStore.getAppLink;
-    const systemUrl = ref("");
-    const selectData = ref("");
-    let timer;
-    let weatherTimer;
-
-    const state = reactive({
-      year: 0,
-      month: 0,
-      week: "",
-      day: 0,
-      hour: "",
-      minute: "",
-      second: 0,
-      week: "",
-    });
-
-    // 初始化
-    onMounted(() => {
-      const info = appStore.applink;
-      changeBg(info[0].key);
-      changeTitle(info[0].key);
-      start();
-      weatherStart();
-      currentAppLink.value = appStore.getAppLink;
-      if (currentAppLink.value && currentAppLink.value.length > 0) {
-        currentTitle.value = currentAppLink.value[0].title;
-      }
-      currentDistrict.value = appStore.getAppDistrict;
-      initUserInfo();
-    });
-
-    const weatherStart = () => {
-      initWeatherInfo();
-      clearInterval(weatherTimer);
-      weatherTimer = setInterval(() => update(), 1000 * 60 * 60 * 24);
-    };
-
-    // 获取天气数据
-    const initWeatherInfo = async () => {
-      const now = dateUtil();
-      const result = await weatherServer.getWeatherInfo();
-      if (result && result.data) {
-        currentWeather.value = result.data + "℃";
-      } else {
-        currentWeather.value = "";
-      }
-    };
-
-    // 获取登录用户信息
-    const initUserInfo = async () => {
-      const result = await authServer.getUserInfo();
-      currentLoginInfo.value = result.data;
-      appStore.setCurrentLoginInfo(unref(currentLoginInfo));
-    };
-
-    // 时间日期数据格式化
-    const update = () => {
-      const now = dateUtil();
-      state.year = now.get("y");
-      state.month = now.get("M") + 1;
-      state.day = now.get("D");
-      currentDate.value =
-        now.get("y") + "-" + (now.get("M") + 1) + "-" + now.get("D");
-      currentTime.value =
-        now.format("HH") +
-        ":" +
-        now.format("mm") +
-        ":" +
-        (now.get("s") > 9 ? now.get("s") : "0" + now.get("s"));
-      currentWeek.value = getWeek();
-    };
-
-    // 开启日期时间计时器
-    function start() {
-      update();
-      clearInterval(timer);
-      timer = setInterval(() => update(), 1000);
-    }
-
-    // 停止时间日期计时器
-    function stop() {
-      clearInterval(timer);
-      clearInterval(weatherTimer);
-    }
-
-    // 退出
-    async function logout() {
-      await authServer.doLogout();
-      appStore.setToken(undefined);
-      window.localStorage.removeItem("token");
-      window.localStorage.clear();
-      const url = appStore.getConfig.CALLBACK_URL + "/";
-      location.href = url;
-    }
-
-    // 系统切换显示
-    function showModal() {
-      visible.value = true;
-    }
-
-    // 系统切换
-    function jump(item) {
-      if (item && item.key && item.url) {
-        visible.value = false;
-        bus.emit("SystemUrl", item.url);
-        changeBg(item.key);
-        changeTitle(item.key);
-      } else {
-        message.warn("请联系管理员");
-      }
-    }
-
-    // 头部背景切换
-    function changeBg(system) {
-      switch (system) {
-        case SysEnum.FOREST:
-          headerBg.value = require("../assets/forestbg.png");
-          webmBg.value = require("../assets/sh.webm");
-          break;
-        case SysEnum.GEODISASTER:
-          headerBg.value = require("../assets/geodisasterbg.png");
-          webmBg.value = require("../assets/dz.webm");
-          break;
-        case SysEnum.TRAFFIC:
-        case SysEnum.FLOOD:
-        case SysEnum.CHEMICAL:
-        case SysEnum.INDUSTRIAL:
-        case SysEnum.TAILINGSPOND:
-        case SysEnum.ELEVATOR:
-        case SysEnum.FIRECONTROL:
-        case SysEnum.POPULATIONDENSITY:
-        case SysEnum.COMPOSITE:
-          headerBg.value = require("../assets/blue.png");
-          webmBg.value = require("../assets/header.webm");
-          break;
-      }
-    }
-
-    // 头部标题切换
-    function changeTitle(system) {
-      switch (system) {
-        case SysEnum.FOREST:
-          titleBg.value = require("../assets/foresttitle.png");
-          break;
-        case SysEnum.GEODISASTER:
-          titleBg.value = require("../assets/geotitle.png");
-          break;
-        case SysEnum.TRAFFIC:
-          titleBg.value = require("../assets/traffictitle.png");
-          break;
-        case SysEnum.FLOOD:
-          titleBg.value = require("../assets/floodtitle.png");
-          break;
-        case SysEnum.CHEMICAL:
-          titleBg.value = require("../assets/chemicaltitle.png");
-          break;
-        case SysEnum.INDUSTRIAL:
-          titleBg.value = require("../assets/industrialtitle.png");
-          break;
-        case SysEnum.TAILINGSPOND:
-          titleBg.value = require("../assets/wkktitle.png");
-          break;
-        case SysEnum.ELEVATOR:
-          titleBg.value = require("../assets/elevatortitle.png");
-          break;
-        case SysEnum.POPULATIONDENSITY:
-          titleBg.value = require("../assets/rmtitle.png");
-          break;
-        case SysEnum.FIRECONTROL:
-          titleBg.value = require("../assets/xftitle.png");
-          break;
-        case SysEnum.COMPOSITE:
-          titleBg.value = require("../assets/zhtitle.png");
-          break;
-      }
-    }
-
-    function selectFunc(item) {
-      selectData.value = item;
-      let sys = null;
-      appLinkInfo.forEach((ele) => {
-        if (ele.key === item) {
-          sys = ele;
-        }
-      });
-      jump(sys);
-    }
-
-    onUnmounted(() => {
-      stop();
-    });
-
-    return {
-      currentTitle,
-      currentDate,
-      currentTime,
-      currentWeek,
-      currentWeather,
-      currentDistrict,
-      currentLoginInfo,
-      logout,
-      headerBg,
-      titleBg,
-      webmBg,
-      visible,
-      showModal,
-      appLinkInfo,
-      jump,
-      systemUrl,
-      selectFunc,
-    };
-  },
-});
 </script>
 
 <style lang="less" scoped>
-.layout {
-  max-width: 3840px;
-  max-height: 1080px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.header {
-  height: 9vh;
-  width: 100%;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  color: #ffffff;
-  font-size: 20px;
-
-  video {
-    position: fixed;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    left: 0;
-    right: 10;
-    top: 0;
-  }
-
-  .left {
-    flex: 2;
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    .line {
-      width: 5px;
-      height: 25%;
-      background-color: #4ac2fa;
-      margin: 0 20px 5px 20px;
-      margin-top: -20px;
-    }
-
-    .time {
-      margin-left: 1vw;
-      margin-top: -20px;
-    }
-
-    .date {
-      margin-top: -20px;
-    }
-
-    .weather {
-      margin-top: -20px;
-    }
-    .week {
-      margin-top: -20px;
-    }
-  }
-
-  .title {
-    margin-top: 30px;
-    flex: 6;
-    height: 100%;
-    margin-right: 770px;
-    margin-top: -7px;
-  }
-
-  .right {
-    flex: 2;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 30px;
-
-    .line {
-      width: 5px;
-      height: 25%;
-      background-color: #4ac2fa;
-      margin: 0 20px 5px 20px;
-      margin-top: -20px;
-    }
-
-    .district {
-      margin-top: -20px;
-    }
-
-    .applink {
-      margin-bottom: 6px;
-      margin-top: -20px;
-    }
-
-    .userinfo {
-      margin-right: 10px;
-      margin-top: -20px;
-    }
-
-    .exit {
-      margin-bottom: 6px;
-      margin-top: -20px;
-    }
-  }
-}
-
-.content {
-  height: 1080px;
-  width: 100%;
-}
-
-.system-box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: wrap;
-
-  .tool {
-    width: 298px;
-    height: 138px;
-    margin: 18px 10px 0px 5px;
-    position: relative;
-
-    .title-box {
-      width: 100%;
-      position: absolute;
-      font-size: 20px;
-      bottom: 8px;
-      text-align: center;
-      color: #ffffff;
-
-      &-active,
-      &:hover {
-        color: #ffa800;
-      }
-    }
-  }
-
-  .geodisaster {
-    background-image: url(../assets/dizhaiA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/dizhaiB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .elevator {
-    background-image: url(../assets/diantiA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/diantiB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .industrial {
-    background-image: url(../assets/gongmaoA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/gongmaoB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .flood {
-    background-image: url(../assets/honglaoA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/honglaoB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .traffic {
-    background-image: url(../assets/jiaotongA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/jiaotongB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .populationdensity {
-    background-image: url(../assets/renmiA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/renmiB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .forest {
-    background-image: url(../assets/senhuoA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/senhuoB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .chemical {
-    background-image: url(../assets/weihuaA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/weihuaB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .tailingspond {
-    background-image: url(../assets/weikuangA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/weikuangB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .firecontrol {
-    background-image: url(../assets/xiaofangA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/xiaofangB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-
-  .composite {
-    background-image: url(../assets/zongheA.png);
-    background-repeat: no-repeat;
-
-    &-active,
-    &:hover {
-      .title-box {
-        color: #ffa800;
-      }
-
-      background-image: url(../assets/zongheB.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  }
-}
-
-:deep(.ant-modal) {
-  position: relative;
-  top: 70px !important;
-  left: 39.4vw !important;
-}
-
-:deep(.ant-modal-close) {
-  color: #ffffff;
-}
-
-:deep(.ant-modal-title) {
-  display: none;
-  // color: rgba(0, 0, 0, 0.85);
-  // font-weight: bold;
-  // font-size: 16px;
-  // line-height: 22px;
-  // word-wrap: break-word;
-}
-
-:deep(.ant-modal-header) {
-  display: none;
-  // color: rgba(0, 0, 0, 0.85);
-  // font-weight: bold;
-  // font-size: 16px;
-  // line-height: 22px;
-  // word-wrap: break-word;
-}
-
-// :deep(.ant-modal-body) {
-//   width: 1000px;
-//   height: 950px;
-//   padding: 0;
-//   background: url("../assets/changeSystemBg.png") no-repeat;
-//   background-size: 696px 900px;
-//   background-position-x: -45px;
-//   background-position-y: 0;
-//   // color: rgba(0, 0, 0, 0.85);
-//   // font-weight: bold;
-//   // font-size: 16px;
-//   // line-height: 22px;
-//   // word-wrap: break-word;
-// }
-:deep(.ant-modal-content) {
-  width: 700px;
-  max-height: 970px;
-  padding: 0;
-  background: url("../assets/changeSystemBg.png") no-repeat;
-  background-position-x: -25px;
-  // color: rgba(0, 0, 0, 0.85);
-  // font-weight: bold;
-  // font-size: 16px;
-  // line-height: 22px;
-  // word-wrap: break-word;
-}
+@import url('./Dashboard.less');
 </style>

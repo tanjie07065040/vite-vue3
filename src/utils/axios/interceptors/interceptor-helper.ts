@@ -13,7 +13,7 @@ export type ErrorInterceptor = (error: any) => any;
  * @param onError 错误回调
  * @returns 拦截器ID
  */
-export function useRequestInterceptor(interceptor: RequestInterceptor, onError?: ErrorInterceptor): number {
+export function useRequestInterceptor (interceptor: RequestInterceptor, onError?: ErrorInterceptor): number {
   return axios.interceptors.request.use(interceptor, onError)
 }
 
@@ -22,7 +22,7 @@ export function useRequestInterceptor(interceptor: RequestInterceptor, onError?:
  *
  * @param id 拦截器ID
  */
-export function removeRequestInterceptor(id: number): void {
+export function removeRequestInterceptor (id: number): void {
   axios.interceptors.request.eject(id)
 }
 
@@ -33,7 +33,7 @@ export function removeRequestInterceptor(id: number): void {
  * @param onError 错误回调
  * @returns 拦截器ID
  */
-export function useResponseInterceptor(interceptor: ResponseInterceptor, onError?: ErrorInterceptor): number {
+export function useResponseInterceptor (interceptor: ResponseInterceptor, onError?: ErrorInterceptor): number {
   return axios.interceptors.response.use(interceptor, onError)
 }
 
@@ -42,6 +42,6 @@ export function useResponseInterceptor(interceptor: ResponseInterceptor, onError
  *
  * @param id 拦截器ID
  */
-export function removeResponseInterceptor(id: number): void {
+export function removeResponseInterceptor (id: number): void {
   axios.interceptors.response.eject(id)
 }
