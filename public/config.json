@@ -1,15 +1,20 @@
 {
-  "AUTHOR_URL": "https://mew.gsafety.com:30665/mew/login/#/login",
-  "CALLBACK_URL": "http://localhost:8080",
+  "AUTHOR_URL":  "https://mew.gsafety.com:30665/mew/login/#/login",
+  "CALLBACK_URL":  "http://localhost:8080",
   "BASECLOUD_URL": "https://mew.gsafety.com:30665",
-  "LOGIN_URL": "https://mew.gsafety.com:30665",
-  "DISTRICT": "合肥市",
+  "LOGIN_URL":  "https://mew.gsafety.com:30665",
+  "DISTRICT":  "合肥市",
   "BUSINESSURL": "https://mew.gsafety.com:30665",
   "APPLINK": [
-    {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
-      "name": "危化品安全生产风险专项",
-      "key": "chemical"
+  {
+      "url": "https://10.5.5.204:15443/#/Home",
+      "name": "全景图",
+      "key": "composite"
+    },
+   {
+      "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MjcxNH0=",
+      "name": "洪涝灾害风险专项",
+      "key": "flood"
     },
     {
       "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MTcwMH0=",
@@ -17,32 +22,32 @@
       "key": "traffic"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
-      "name": "洪涝灾害风险专项",
-      "key": "flood"
+      "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6Mjc4MH0=",
+      "name": "危化品安全生产风险专项",
+      "key": "chemical"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
+      "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MjY3MX0=",
       "name": "尾矿库安全风险专项",
       "key": "tailingspond"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
+      "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MjYwN30=",
       "name": "地灾灾害风险专项",
       "key": "geodisaster"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
+      "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MjQ0N30=?timeStamp=187abfb7cf8",
       "name": "森林火灾风险专项",
       "key": "forest"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
+      "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MjY2N30=",
       "name": "工贸企业安全风险专项",
       "key": "industrial"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
+      "url": "https://mew.gsafety.com:30665/personal-secrecy-big-screen-nei/#/",
       "name": "人员密集场所安全风险专项",
       "key": "populationdensity"
     },
@@ -52,14 +57,9 @@
       "key": "firecontrol"
     },
     {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
+      "url": "https://mew.gsafety.com:30665/elevator-big-screen-nei/#/security/dashboard",
       "name": "电梯安全风险专项",
       "key": "elevator"
-    },
-    {
-      "url": "http://112.27.198.15:9832/hefei-fire-screen/index.html#",
-      "name": "全景图",
-      "key": "composite"
     }
   ]
 }
