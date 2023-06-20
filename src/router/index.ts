@@ -55,7 +55,8 @@ router.beforeEach((to, from, next) => {
       appStore.getConfig.AUTHOR_URL +
       "?redirect_url=" +
       appStore.getConfig.CALLBACK_URL +
-      "&tag=bigscreen";
+      "&tag=bigscreen&free=" +
+      appStore.freeLogin;
     location.href = url;
     return;
   }
