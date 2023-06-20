@@ -34,5 +34,6 @@ async function bootstrap() {
   appStore.setAppBasicUrl(config.data.BASECLOUD_URL);
   appStore.setAppLoginUrl(config.data.LOGIN_URL);
   appStore.setAppWeatherUrl(config.data.BUSINESSURL);
+  appStore.setFreeLogin(config.data.FREELOGIN);
 }
 bootstrap();

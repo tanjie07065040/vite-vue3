@@ -1,17 +1,18 @@
 {
-  "AUTHOR_URL":  "https://mew.gsafety.com:30665/mew/login/#/login",
-  "CALLBACK_URL":  "http://localhost:8080",
+  "AUTHOR_URL": "https://mew.gsafety.com:30665/mew/login/#/login",
+  "CALLBACK_URL": "http://localhost:8080",
   "BASECLOUD_URL": "https://mew.gsafety.com:30665",
-  "LOGIN_URL":  "https://mew.gsafety.com:30665",
-  "DISTRICT":  "合肥市",
+  "LOGIN_URL": "https://mew.gsafety.com:30665",
+  "DISTRICT": "合肥市",
   "BUSINESSURL": "https://mew.gsafety.com:30665",
+  "FREELOGIN": "false",
   "APPLINK": [
-  {
+    {
       "url": "https://10.5.5.204:15443/#/Home",
       "name": "全景图",
       "key": "composite"
     },
-   {
+    {
       "url": "https://easyv.gsafety.com:8443/shareScreen/eyJzY3JlZW5JZCI6MjcxNH0=",
       "name": "洪涝灾害风险专项",
       "key": "flood"

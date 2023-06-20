@@ -12,6 +12,7 @@ interface AppState {
   appLoginUrl: string;
   currentLoginInfo: any;
   weatherUrl: string;
+  freeLogin: string;
 }
 export const useAppStore = defineStore({
   id: "app",
@@ -28,6 +29,7 @@ export const useAppStore = defineStore({
     appLoginUrl: "",
     currentLoginInfo: {},
     weatherUrl: "",
+    freeLogin: "",
   }),
   getters: {
     /**
@@ -66,6 +68,9 @@ export const useAppStore = defineStore({
     getAppWeatherUrl(): string {
       return this.weatherUrl;
     },
+    getFreeLogin(): string {
+      return this.freeLogin;
+    }
   },
   actions: {
     /**
@@ -104,6 +109,9 @@ export const useAppStore = defineStore({
     setAppWeatherUrl(weatherUrl: string): string {
       return (this.weatherUrl = weatherUrl);
     },
+    setFreeLogin(freeLogin: string): string {
+      return (this.freeLogin = freeLogin);
+    }
   },
 });
 
