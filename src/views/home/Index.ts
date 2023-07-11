@@ -12,6 +12,9 @@ export default defineComponent({
         const isFirst: any = ref(true);
         const appStore = useAppStore();
 
+        /**
+         * 初始化加载入口
+         */
         onMounted(() => {
             if (isFirst) {
                 const info: any = appStore.applink;
