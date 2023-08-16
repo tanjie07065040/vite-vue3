@@ -105,7 +105,7 @@
                 'flood-active': selectData === 'flood',
               },
             ]" @click="selectFunc('flood')">
-            <div class="title-box">洪涝灾害风险专项</div>
+            <div class="title-box">洪水灾害风险监测预警系统</div>
           </div>
 
           <div class="tool forest" :class="[

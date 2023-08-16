@@ -1,23 +1,23 @@
 const gulp = require('gulp');
 const del = require('del');
 
-//推送镜像
+// 推送镜像
 const tar = require('gulp-tar');
 const Docker = require('dockerode');
 const config = require('../package.json');
 
-//镜像信息初始化
-var imageName = '172.22.3.5:9002/mew/' + config.name + ':' + config.version;
-var fileTarName = config.name + '-' + config.version + '.tar';
-var auth = {
+// 镜像信息初始化
+const imageName = '172.22.3.5:9002/mew/' + config.name + ':' + config.version;
+const fileTarName = config.name + '-' + config.version + '.tar';
+const auth = {
   username: 'tanjie',
   password: '12345678',
   email: 'admin@example.com',
   serveraddress: 'http://172.22.3.5:9002',
 };
-var docker = new Docker({ host: 'http://172.22.3.101', port: 2375 });
+const docker = new Docker({ host: 'http://172.22.3.101', port: 2375 });
 
-//#region  NPM发布Docker镜像
+// #region  NPM发布Docker镜像
 
 gulp.task(
   'copy',
@@ -45,7 +45,7 @@ gulp.task(
         end: true,
       });
       response.on('end', function () {
-        var image = docker.getImage(imageName);
+        const image = docker.getImage(imageName);
         console.log(image);
         image.history(function (err, res) {
           if (err) {
@@ -75,4 +75,4 @@ gulp.task(
   }),
 );
 
-//#endregion
+// #endregion
