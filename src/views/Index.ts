@@ -242,6 +242,7 @@ export default defineComponent({
       jump,
       systemUrl,
       selectFunc,
+      currentAppLink,
     };
   },
 });
